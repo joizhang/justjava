@@ -6,6 +6,8 @@ import org.junit.runner.RunWith;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -16,13 +18,16 @@ import static org.junit.Assert.*;
 public class SpringDaoConfigTest {
 
     @Autowired
+    private Environment environment;
+
+    @Autowired
     private DruidDataSource dataSource;
 
     @Autowired
     private SqlSessionFactoryBean sqlSessionFactoryBean;
 
     @Autowired
-    private MapperScannerConfigurer mapperScannerConfigurer;
+    private DataSourceTransactionManager dataSourceTransactionManager;
 
     @Test
     public void testDataSource() {
@@ -35,7 +40,12 @@ public class SpringDaoConfigTest {
     }
 
     @Test
-    public void testMapperScannerConfigurer() {
-        assertNotNull(mapperScannerConfigurer);
+    public void testDataSourceTransactionManager() {
+        assertNotNull(dataSourceTransactionManager);
+    }
+
+    @Test
+    public void testGetProperty() {
+        assertNotNull(environment);
     }
 }

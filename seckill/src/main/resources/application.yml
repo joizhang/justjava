@@ -1,0 +1,48 @@
+spring:
+  datasource:
+    name: seckill
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/seckill?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    minIdle: 1
+    maxActive: 1
+    initialSize: 1
+    timeBetweenEvictionRunsMillis: 3000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 'x' FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+  resources:
+    chain:
+      strategy:
+        content:
+          enabled: true
+          paths: /**
+  devtools:
+    restart:
+      exclude: static/**,public/**
+      trigger-file: classpath:application.yml
+    livereload:
+      enabled: true
+  redis:
+    database: 0
+    host: 127.0.0.1
+    pool:
+      max-active: 8
+      max-idle: 8
+      max-wait: -1
+      min-idle: 0
+    port: 6379
+    timeout: 10
+
+---
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapperLocations: classpath:mapper/*.xml
+  typeAliasesPackage: com.joizhang.entity
+---
+my:
+  secret: $(random.int)

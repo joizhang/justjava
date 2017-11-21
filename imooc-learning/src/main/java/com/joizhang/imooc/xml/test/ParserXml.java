@@ -15,24 +15,24 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import com.joizhang.imooc.xml.sax.SAXParserHandler;
+import com.joizhang.imooc.xml.sax.entity.Book;
 import org.dom4j.DocumentException;
 import org.dom4j.io.SAXReader;
 import org.jdom2.Attribute;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
-import org.junit.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import com.imooc.xml.sax.SAXParserHandler;
-import com.imooc.xml.sax.entity.Book;
 
 
-public class ParserXMLTest {
-	public void domXmlParser() {
+public class ParserXml {
+
+	public static void domXmlParser() {
 		ArrayList<Book> bookLists = new ArrayList<Book>();
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		try {
@@ -83,7 +83,7 @@ public class ParserXMLTest {
 		}
 	}
 	
-	public void saxXmlParser(){
+	public static void saxXmlParser(){
 		SAXParserFactory factory = SAXParserFactory.newInstance();
 		try {
 			SAXParser parser = factory.newSAXParser();
@@ -98,7 +98,7 @@ public class ParserXMLTest {
 		}
 	}
 	
-	public void jdomXmlParser() {
+	public static void jdomXmlParser() {
 		ArrayList<Book> booksList = new ArrayList<Book>();
 		SAXBuilder saxBuilder = new SAXBuilder();
 		InputStream in;
@@ -149,7 +149,7 @@ public class ParserXMLTest {
 
 	}
 	
-	public void dom4jXmlParser(){
+	public static void dom4jXmlParser(){
 		ArrayList<Book> booksList = new ArrayList<Book>();
 		SAXReader reader = new SAXReader();
 		try {
@@ -192,29 +192,4 @@ public class ParserXMLTest {
 		}
 	}
 
-	@Test
-	public void testPerformance() throws Exception{
-		System.out.println("性能测试:");
-		
-		//测试DOM的性能:
-		long start = System.currentTimeMillis();
-		domXmlParser();
-		System.out.println("DOM:"+ (System.currentTimeMillis() - start) );
-		
-		//测试SAX的性能:
-		start = System.currentTimeMillis();
-		saxXmlParser();
-		System.out.println("SAX:"+ (System.currentTimeMillis() - start) );
-		
-		//测试JDOM的性能:
-		start = System.currentTimeMillis();
-		jdomXmlParser();
-		System.out.println("JDOM:"+ (System.currentTimeMillis() - start) );
-		
-		//测试DOM4J的性能:
-		start = System.currentTimeMillis();
-		dom4jXmlParser();
-		System.out.println("DOM4J:"+ (System.currentTimeMillis() - start) );
-	
-	}
 }

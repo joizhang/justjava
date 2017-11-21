@@ -2,11 +2,11 @@ package com.joizhang.imooc.xml.sax;
 
 import java.util.ArrayList;
 
+import com.joizhang.imooc.xml.sax.entity.Book;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import com.imooc.xml.sax.entity.Book;
 
 public class SAXParserHandler extends DefaultHandler {
 	String value = null;

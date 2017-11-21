@@ -1,10 +1,13 @@
 package com.joizhang.imooc.xml.sax;
 
+import com.joizhang.imooc.xml.sax.entity.Book;
+
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
-import com.imooc.xml.sax.entity.Book;
-
+/**
+ * @author joizhang
+ */
 public class SAXTest {
 
 	/**

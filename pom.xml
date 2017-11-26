@@ -15,7 +15,7 @@
     <packaging>pom</packaging>
 
     <name>justjava</name>
-    <url>http://maven.apache.org</url>
+    <url>https://github.com/joizhang/justjava</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

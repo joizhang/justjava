@@ -1,7 +1,7 @@
 package com.joizhang.imooc.guice.general;
 
 /**
- * @author joizhang
+ * @author imooc
  */
 public interface MyDestination {
 

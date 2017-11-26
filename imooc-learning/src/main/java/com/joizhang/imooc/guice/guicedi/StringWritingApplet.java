@@ -5,7 +5,7 @@ import com.google.inject.Provider;
 import javax.inject.Inject;
 
 /**
- * @author joizhang
+ * @author imooc
  */
 public class StringWritingApplet implements MyApplet {
 
@@ -14,7 +14,8 @@ public class StringWritingApplet implements MyApplet {
     private Provider<String> stringProvider;
 
     @Inject
-    public StringWritingApplet(MyDestination destination, Provider<String> stringProvider) {
+    public StringWritingApplet(MyDestination destination,
+                               @Output Provider<String> stringProvider) {
         this.destination = destination;
         this.stringProvider = stringProvider;
     }

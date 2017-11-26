@@ -3,7 +3,7 @@ package com.joizhang.imooc.guice.general;
 import com.joizhang.imooc.guice.guicedi.StringProvider;
 
 /**
- * @author joizhang
+ * @author imooc
  */
 public class StringWritingApplet implements MyApplet {
 

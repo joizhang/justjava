@@ -4,7 +4,7 @@ import javax.inject.Inject;
 import java.io.PrintStream;
 
 /**
- * @author joizhang
+ * @author imooc
  */
 public class PrintStreamWriter implements MyDestination {
 

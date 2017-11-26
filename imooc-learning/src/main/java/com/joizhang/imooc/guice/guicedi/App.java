@@ -3,7 +3,7 @@ package com.joizhang.imooc.guice.guicedi;
 import com.google.inject.Guice;
 
 /**
- * @author joizhang
+ * @author imooc
  */
 public class App {
 

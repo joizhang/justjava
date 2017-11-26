@@ -1,7 +1,7 @@
 package com.joizhang.imooc.guice.guicedi;
 
 /**
- * @author joizhang
+ * @author imooc
  */
 public interface StringProvider {
 

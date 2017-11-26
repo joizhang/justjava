@@ -3,7 +3,7 @@ package com.joizhang.imooc.guice.general;
 import java.io.PrintStream;
 
 /**
- * @author joizhang
+ * @author imooc
  */
 public class PrintStreamWriter implements MyDestination {
 

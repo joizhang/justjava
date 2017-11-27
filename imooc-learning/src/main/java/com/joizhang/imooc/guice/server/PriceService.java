@@ -1,5 +1,7 @@
 package com.joizhang.imooc.guice.server;
 
+import java.util.Set;
+
 /**
  * @author imooc
  */
@@ -12,4 +14,9 @@ public interface PriceService {
      */
     long getPrice(long orderId);
 
+    /**
+     * get supported currencies
+     * @return
+     */
+    Set<String> getSupportedCurrencies();
 }

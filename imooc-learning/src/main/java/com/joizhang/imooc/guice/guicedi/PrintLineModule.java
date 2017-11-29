@@ -5,12 +5,12 @@ import com.google.inject.AbstractModule;
 /**
  * @author imooc
  */
-public class MainModule extends AbstractModule {
+public class PrintLineModule extends AbstractModule {
 
     @Override
     protected void configure() {
-        install(new HelloWorldModule());
-        install(new PrintLineModule());
+        Applets.register(binder()).named("println")
+                .to(PrintLineApplet.class);
     }
 
 }

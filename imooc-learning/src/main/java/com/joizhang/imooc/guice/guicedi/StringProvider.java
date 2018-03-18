@@ -7,6 +7,7 @@ public interface StringProvider {
 
     /**
      * get string
+     *
      * @return
      */
     String get();

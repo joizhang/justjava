@@ -2,6 +2,7 @@ package com.joizhang.imooc.hotload;
 
 /**
  * 封装加载类的信息
+ *
  * @author joizhang
  */
 public class LoadInfo {

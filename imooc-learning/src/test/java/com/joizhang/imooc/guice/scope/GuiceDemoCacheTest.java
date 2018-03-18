@@ -5,12 +5,14 @@ import com.google.inject.Inject;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class GuiceDemoCacheTest {
 
-    @Inject private PaymentServiceImpl paymentService;
-    @Inject private PriceServiceImpl priceService;
+    @Inject
+    private PaymentServiceImpl paymentService;
+    @Inject
+    private PriceServiceImpl priceService;
 
 
     @Before

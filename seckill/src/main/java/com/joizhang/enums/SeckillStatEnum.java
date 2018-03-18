@@ -19,14 +19,6 @@ public enum SeckillStatEnum {
         this.stateInfo = stateInfo;
     }
 
-    public int getState() {
-        return state;
-    }
-
-    public String getStateInfo() {
-        return stateInfo;
-    }
-
     public static SeckillStatEnum stateOf(int index) {
         for (SeckillStatEnum statEnum : values()) {
             if (statEnum.getState() == index) {
@@ -34,5 +26,13 @@ public enum SeckillStatEnum {
             }
         }
         return null;
+    }
+
+    public int getState() {
+        return state;
+    }
+
+    public String getStateInfo() {
+        return stateInfo;
     }
 }

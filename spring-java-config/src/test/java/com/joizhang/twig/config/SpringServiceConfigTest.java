@@ -8,12 +8,12 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.ContextHierarchy;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextHierarchy({
         @ContextConfiguration(classes = SpringDaoConfig.class),
-        @ContextConfiguration(classes = SpringServiceConfig.class) })
+        @ContextConfiguration(classes = SpringServiceConfig.class)})
 public class SpringServiceConfigTest {
 
     @Autowired

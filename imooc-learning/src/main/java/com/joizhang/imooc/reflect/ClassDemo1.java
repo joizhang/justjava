@@ -14,10 +14,10 @@ public class ClassDemo1 {
         // 第二种表达方式 已经知道该类的对象通过getClass方法
         Class c2 = foo1.getClass();
 
-		/*
+        /*
          * 官网c1, c2表示了Foo类的类类型(class type) 万事万物皆对象 类也是对象，是Class类的实例对象
-		 * 这个对象我们成为该类的类类型
-		 */
+         * 这个对象我们成为该类的类类型
+         */
 
         // 不管c1 or c2 ,都代表了Foo类的类类型，一个类只可能是Class类
         System.out.println(c1 == c2);

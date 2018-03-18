@@ -7,7 +7,6 @@ import com.joizhang.imooc.guice.server.OrderService;
 import com.joizhang.imooc.guice.server.PaymentService;
 import com.joizhang.imooc.guice.server.PriceService;
 
-import javax.inject.Named;
 import java.util.Arrays;
 import java.util.List;
 
@@ -24,7 +23,8 @@ public class ServerModule extends AbstractModule {
         bind(PaymentService.class).to(PaymentServiceImpl.class);
         bind(PriceService.class).to(PriceServiceImpl.class);
 
-        bind(new TypeLiteral<List<String>>() {})
+        bind(new TypeLiteral<List<String>>() {
+        })
                 .toInstance(Arrays.asList("CNY", "USD", "EUR"));
     }
 

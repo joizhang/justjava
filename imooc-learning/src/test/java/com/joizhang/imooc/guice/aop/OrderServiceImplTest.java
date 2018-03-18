@@ -9,7 +9,8 @@ import javax.inject.Inject;
 
 public class OrderServiceImplTest {
 
-    @Inject private OrderService orderService;
+    @Inject
+    private OrderService orderService;
 
     @Before
     public void setUp() {

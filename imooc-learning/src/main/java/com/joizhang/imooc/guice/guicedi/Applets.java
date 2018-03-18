@@ -24,6 +24,22 @@ import java.util.Map;
  */
 public class Applets {
 
+    public static AppletRegister register(Binder binder) {
+        return new AppletRegister(binder);
+    }
+
+    public static MyApplet get(Injector injector, String name) {
+        Map<String, MyApplet> applets = injector.getInstance(
+                Key.get(new TypeLiteral<Map<String, MyApplet>>() {
+                }));
+        if (!applets.containsKey(name)) {
+            throw new IllegalArgumentException("Unable to find applet [" + name + "]." +
+                    "valid applets are " +
+                    Joiner.on(", ").join(applets.keySet()));
+        }
+        return applets.get(name);
+    }
+
     public static class AppletRegister {
         private final Binder binder;
 
@@ -35,22 +51,6 @@ public class Applets {
             return MapBinder.newMapBinder(binder, String.class, MyApplet.class)
                     .addBinding(name);
         }
-    }
-
-
-    public static AppletRegister register(Binder binder) {
-        return new AppletRegister(binder);
-    }
-
-    public static MyApplet get(Injector injector, String name) {
-        Map<String, MyApplet> applets = injector.getInstance(
-                Key.get(new TypeLiteral<Map<String, MyApplet>>() {}));
-        if (!applets.containsKey(name)) {
-            throw new IllegalArgumentException("Unable to find applet [" + name + "]." +
-                    "valid applets are " +
-                    Joiner.on(", ").join(applets.keySet()));
-        }
-        return applets.get(name);
     }
 
 }

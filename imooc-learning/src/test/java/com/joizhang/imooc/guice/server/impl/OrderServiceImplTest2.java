@@ -30,7 +30,8 @@ class PriceServiceMock implements PriceService {
 
 public class OrderServiceImplTest2 {
 
-    @Inject private OrderService orderService;
+    @Inject
+    private OrderService orderService;
 
     @Inject
     private Provider<List<String>> supportedCurrenciesProvider;

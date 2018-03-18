@@ -27,15 +27,13 @@ import java.util.Map;
 @Service
 public class SeckillServiceImpl implements SeckillService {
 
+    //md5盐值字符串，用于混淆MD5
+    private final String salt = "asdasdasd123123*^^&%&^&%$ajsdbkaj";
     private Logger logger = LoggerFactory.getLogger(this.getClass());
-
     @Autowired
     private SecKillDao secKillDao;
     @Autowired
     private SuccessKilledDao successKilledDao;
-
-    //md5盐值字符串，用于混淆MD5
-    private final String salt = "asdasdasd123123*^^&%&^&%$ajsdbkaj";
 
     public List<Seckill> getSeckillList() {
         return secKillDao.queryAll(0, 4);

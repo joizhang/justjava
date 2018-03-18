@@ -7,8 +7,6 @@ import org.junit.Test;
 
 import javax.inject.Inject;
 
-import static org.junit.Assert.*;
-
 public class PaymentServiceImplTest {
 
     @Inject

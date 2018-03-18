@@ -6,11 +6,12 @@ import org.junit.Test;
 
 import javax.inject.Inject;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotEquals;
 
 public class SessionManagerTest {
 
-    @Inject SessionManager sessionManager;
+    @Inject
+    SessionManager sessionManager;
 
     @Before
     public void setUp() {

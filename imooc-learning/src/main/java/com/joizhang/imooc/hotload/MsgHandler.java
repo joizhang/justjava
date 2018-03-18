@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 后台启动线程不停刷新重新加载
+ *
  * @author joizhang
  */
 public class MsgHandler implements Runnable {

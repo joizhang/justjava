@@ -13,10 +13,10 @@ public class ClassUtil {
         //JNI实现native方法
         Class<?> c = obj.getClass();
 
-		/*
+        /*
          * getMethods()方法获取的使所有的public的函数，包括父类继承而来的
-		 * DeclaredzMethods()获取的是该类自己声明的方法，不问访问
-		 * */
+         * DeclaredzMethods()获取的是该类自己声明的方法，不问访问
+         * */
         Method[] methods = c.getMethods();
         for (int i = 0; i < methods.length; i++) {
             //得到方法的返回值类型的类类型
@@ -41,13 +41,13 @@ public class ClassUtil {
 
     public static void printClassFieldMessage(Object obj) {
         Class<?> c = obj.getClass();
-		/*
-		 * 成员变量也是对象
-		 * java.lang.reflect.Field
-		 * Field类封装了关于成员变量的操作
-		 * getFields()方法获得是所有的public的成员变量的信息
-		 * getDeclaredFields()获取的是该类自己声明的成员变量的信息
-		 * */
+        /*
+         * 成员变量也是对象
+         * java.lang.reflect.Field
+         * Field类封装了关于成员变量的操作
+         * getFields()方法获得是所有的public的成员变量的信息
+         * getDeclaredFields()获取的是该类自己声明的成员变量的信息
+         * */
         Field[] fs = c.getDeclaredFields();
         for (Field field : fs) {
             //得到成员变量的类型的类类型

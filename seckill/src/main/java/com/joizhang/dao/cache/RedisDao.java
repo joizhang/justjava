@@ -15,12 +15,11 @@ import redis.clients.jedis.JedisPool;
 public class RedisDao {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
     private JedisPool jedisPool;
+    private RuntimeSchema<Seckill> schema = RuntimeSchema.createFrom(Seckill.class);
 
     public RedisDao(String ip, int port) {
         jedisPool = new JedisPool(ip, port);
     }
-
-    private RuntimeSchema<Seckill> schema = RuntimeSchema.createFrom(Seckill.class);
 
     public Seckill getSeckill(long seckillId) {
         //redis操作逻辑

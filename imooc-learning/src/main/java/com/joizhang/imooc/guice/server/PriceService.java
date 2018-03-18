@@ -9,6 +9,7 @@ public interface PriceService {
 
     /**
      * get price
+     *
      * @param orderId
      * @return
      */
@@ -16,6 +17,7 @@ public interface PriceService {
 
     /**
      * get supported currencies
+     *
      * @return
      */
     Set<String> getSupportedCurrencies();

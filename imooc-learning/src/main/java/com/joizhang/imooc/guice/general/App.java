@@ -10,6 +10,7 @@ public class App {
      * parse command line
      * set up environment
      * kick off main logic
+     *
      * @param args
      */
     public static void main(String[] args) {

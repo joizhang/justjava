@@ -30,17 +30,18 @@
             alert("connection is null");
         }
     }
+
     </script>
 </head>
 <body>
-    <form onsubmit="return false;">
-        <input type="text" name="message" value="">
-        <br>
-        <br>
-        <input type="button" value="发送websocket请求消息" onclick="send(this.form.message.value)">
-        <hr>
-        <h2>客户端接收到服务端返回的应答消息</h2>
-        <textarea id="responseContent" style="width:1024px; height:300px"></textarea>
-    </form>
+<form onsubmit="return false;">
+    <input type="text" name="message" value="">
+    <br>
+    <br>
+    <input type="button" value="发送websocket请求消息" onclick="send(this.form.message.value)">
+    <hr>
+    <h2>客户端接收到服务端返回的应答消息</h2>
+    <textarea id="responseContent" style="width:1024px; height:300px"></textarea>
+</form>
 </body>
 </html>

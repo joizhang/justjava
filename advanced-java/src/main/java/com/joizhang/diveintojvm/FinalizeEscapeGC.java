@@ -9,22 +9,10 @@ package com.joizhang.diveintojvm;
  * </pre>
  *
  * @author joizhang
- *
  */
 public class FinalizeEscapeGC {
 
     public static FinalizeEscapeGC SAVE_HOOK = null;
-
-    public void isAlive(){
-        System.out.println("yes , i am still alive. :)");
-    }
-
-    @Override
-    protected void finalize() throws Throwable{
-        super.finalize();
-        System.out.println("finalize() method exexuted!");
-        FinalizeEscapeGC.SAVE_HOOK = this;
-    }
 
     public static void main(String[] args) throws Throwable {
         SAVE_HOOK = new FinalizeEscapeGC();
@@ -35,9 +23,9 @@ public class FinalizeEscapeGC {
 //		因为finalize()方法的优先级较低，所有等待500毫秒
         Thread.sleep(500L);
 
-        if(SAVE_HOOK != null){
+        if (SAVE_HOOK != null) {
             SAVE_HOOK.isAlive();
-        }else{
+        } else {
             System.out.println("no , i am dead. :(");
         }
 
@@ -47,12 +35,23 @@ public class FinalizeEscapeGC {
 //		因为finalize()方法的优先级较低，所有等待500毫秒
         Thread.sleep(500L);
 
-        if(SAVE_HOOK != null){
+        if (SAVE_HOOK != null) {
             SAVE_HOOK.isAlive();
-        }else{
+        } else {
             System.out.println("no , i am dead. :(");
         }
 
+    }
+
+    public void isAlive() {
+        System.out.println("yes , i am still alive. :)");
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+        System.out.println("finalize() method exexuted!");
+        FinalizeEscapeGC.SAVE_HOOK = this;
     }
 
 }

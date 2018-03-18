@@ -44,7 +44,6 @@ public interface SeckillService {
             throws SeckillException, SeckillCloseException, RepeatKillException;
 
     /**
-     *
      * @param seckillId
      * @param userPhone
      * @param md5

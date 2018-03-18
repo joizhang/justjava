@@ -12,7 +12,6 @@ import java.lang.reflect.Field;
  * </pre>
  *
  * @author joizhang
- *
  */
 public class DirectMemoryOOM {
 
@@ -23,7 +22,7 @@ public class DirectMemoryOOM {
         unsafeField.setAccessible(true);
         try {
             Unsafe unsafe = (Unsafe) unsafeField.get(null);
-            while(true){
+            while (true) {
                 unsafe.allocateMemory(ONE_MB);
             }
         } catch (Exception e) {

@@ -1,6 +1,5 @@
 package com.joizhang.imooc.guice.server.impl;
 
-import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Provider;
 import com.joizhang.imooc.guice.server.OrderService;
@@ -9,14 +8,14 @@ import org.junit.Before;
 import org.junit.Test;
 
 import javax.inject.Inject;
-import javax.inject.Named;
 import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
 public class OrderServiceImplTest {
 
-    @Inject private OrderService orderService;
+    @Inject
+    private OrderService orderService;
 
     @Inject
 //    @Named("supportedCurrencies")

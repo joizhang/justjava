@@ -7,7 +7,6 @@ import com.joizhang.entity.Seckill;
 import com.joizhang.enums.SeckillStatEnum;
 import com.joizhang.exception.RepeatKillException;
 import com.joizhang.exception.SeckillCloseException;
-import com.joizhang.exception.SeckillException;
 import com.joizhang.service.SeckillService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -67,13 +66,13 @@ public class SeckillController {
         try {
             SeckillExecution execution = seckillService.executeSeckill(seckillId, userPhone, md5);
             return new SeckillResult<SeckillExecution>(true, execution);
-        } catch (RepeatKillException e1){
+        } catch (RepeatKillException e1) {
             SeckillExecution execution = new SeckillExecution(seckillId, SeckillStatEnum.REPEAT_KILL);
             return new SeckillResult<SeckillExecution>(false, execution);
         } catch (SeckillCloseException e2) {
             SeckillExecution execution = new SeckillExecution(seckillId, SeckillStatEnum.END);
             return new SeckillResult<SeckillExecution>(false, execution);
-        }catch (Exception e) {
+        } catch (Exception e) {
             SeckillExecution execution = new SeckillExecution(seckillId, SeckillStatEnum.INNER_ERROR);
             return new SeckillResult<SeckillExecution>(false, execution);
         }

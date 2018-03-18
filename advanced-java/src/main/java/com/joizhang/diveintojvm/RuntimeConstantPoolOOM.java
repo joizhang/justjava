@@ -10,8 +10,8 @@ import java.util.List;
  * Java HotSpot(TM) 64-Bit Server VM warning: ignoring option PermSize=10M; support was removed in 8.0
  * Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=10M; support was removed in 8.0
  * </pre>
- * @author joizhang
  *
+ * @author joizhang
  */
 public class RuntimeConstantPoolOOM {
 

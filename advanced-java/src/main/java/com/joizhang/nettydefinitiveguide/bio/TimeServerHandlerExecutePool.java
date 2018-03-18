@@ -13,7 +13,7 @@ public class TimeServerHandlerExecutePool {
 
     TimeServerHandlerExecutePool(int maxPoolSize, int queueSize) {
         ThreadFactory namedThreadFactory = new ThreadFactoryBuilder().setNameFormat("demo-pool-%d").build();
-        executor = new ThreadPoolExecutor(Runtime.getRuntime() .availableProcessors(),
+        executor = new ThreadPoolExecutor(Runtime.getRuntime().availableProcessors(),
                 maxPoolSize,
                 120L,
                 TimeUnit.SECONDS,

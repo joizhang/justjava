@@ -20,7 +20,7 @@ import java.sql.SQLException;
 @Configuration
 @EnableTransactionManagement
 @PropertySource(value = {"classpath:jdbc.properties"})
-public class SpringDaoConfig /*implements EnvironmentAware */{
+public class SpringDaoConfig /*implements EnvironmentAware */ {
 
     private static Logger logger = LoggerFactory.getLogger(SpringDaoConfig.class);
 

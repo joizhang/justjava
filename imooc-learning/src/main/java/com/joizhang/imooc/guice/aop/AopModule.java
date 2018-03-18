@@ -24,7 +24,8 @@ public class AopModule extends AbstractModule {
         bind(OrderService.class).to(OrderServiceImpl.class);
         bind(PaymentService.class).to(PaymentServiceImpl.class);
         bind(PriceService.class).to(PriceServiceImpl.class);
-        bind(new TypeLiteral<Set<String>>() {})
+        bind(new TypeLiteral<Set<String>>() {
+        })
                 .toInstance(new HashSet<>(Arrays.asList("CNY", "USD", "EUR")));
 
         LoggingInterceptor loggingInterceptor = new LoggingInterceptor();

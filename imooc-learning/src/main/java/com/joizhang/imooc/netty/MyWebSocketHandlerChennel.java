@@ -8,6 +8,7 @@ import io.netty.handler.stream.ChunkedWriteHandler;
 
 /**
  * 初始化连接时候的各个组件
+ *
  * @author joizhang
  */
 public class MyWebSocketHandlerChennel extends ChannelInitializer<SocketChannel> {

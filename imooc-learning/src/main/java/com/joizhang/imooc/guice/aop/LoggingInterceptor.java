@@ -14,7 +14,9 @@ import java.lang.reflect.Method;
  */
 public class LoggingInterceptor implements MethodInterceptor {
 
-    @Inject @SessionId private Provider<Long> sessionIdProvider;
+    @Inject
+    @SessionId
+    private Provider<Long> sessionIdProvider;
 
     @Override
     public Object invoke(MethodInvocation invocation) throws Throwable {

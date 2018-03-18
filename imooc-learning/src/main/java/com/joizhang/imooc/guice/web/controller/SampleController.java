@@ -26,7 +26,15 @@ import org.springframework.web.context.annotation.RequestScope;
 @ServletComponentScan
 public class SampleController {
 
-    @Bean Injector injector(ApplicationContext context) {
+    @Autowired
+    GreetingHandler greetingHandler;
+
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(SampleController.class, args);
+    }
+
+    @Bean
+    Injector injector(ApplicationContext context) {
         return Guice.createInjector(
                 new HelloWorldModule(),
                 new SpringAwareServletModule(context));
@@ -50,14 +58,8 @@ public class SampleController {
         return injector.getInstance(GreetingHandler.class);
     }
 
-    @Autowired GreetingHandler greetingHandler;
-
     @GetMapping("/greeting")
     String greeting(@RequestParam("name") String name) {
         return greetingHandler.getByName(name);
-    }
-
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(SampleController.class, args);
     }
 }

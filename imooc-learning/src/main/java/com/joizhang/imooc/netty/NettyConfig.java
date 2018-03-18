@@ -6,6 +6,7 @@ import io.netty.util.concurrent.GlobalEventExecutor;
 
 /**
  * 存储整个工程的全局配置
+ *
  * @author joizhang
  */
 public class NettyConfig {

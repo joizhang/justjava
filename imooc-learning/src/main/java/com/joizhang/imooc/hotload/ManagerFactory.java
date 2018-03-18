@@ -10,17 +10,15 @@ import java.util.Map;
  */
 public class ManagerFactory {
 
-    /**
-     * 记录热加载类的加载信息
-     */
-    private static final Map<String, LoadInfo> loadTimeMap = new HashMap<String, LoadInfo>();
-
     public static final String CLASS_PATH = "E:\\workspace\\justjava\\imooc-learning\\target\\classes\\com\\joizhang\\imooc\\hotload";
-
     /**
      * 实现热加载的类的全名称
      */
     public static final String MY_MANAGER = "com.joizhang.imooc.hotload.MyManager";
+    /**
+     * 记录热加载类的加载信息
+     */
+    private static final Map<String, LoadInfo> loadTimeMap = new HashMap<String, LoadInfo>();
 
     public static BaseManager getManager(String className) {
         File loadFile = new File(CLASS_PATH + className.replace("\\.", "/") + ".class");
@@ -50,6 +48,7 @@ public class ManagerFactory {
 
     /**
      * 以反射的方式创建对象实例
+     *
      * @param loadClass
      * @return
      */

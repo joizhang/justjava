@@ -11,6 +11,8 @@
         <module>json</module>
         <module>spring-java-config</module>
         <module>advanced-java</module>
+        <module>guice-dependency-injection</module>
+        <module>shiro-imooc</module>
     </modules>
     <packaging>pom</packaging>
 

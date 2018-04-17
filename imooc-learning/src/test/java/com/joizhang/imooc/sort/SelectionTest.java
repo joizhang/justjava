@@ -1,4 +1,4 @@
-package com.joizhang.imooc.algorithms.chapter2.sort;
+package com.joizhang.imooc.sort;
 
 import org.junit.Test;
 

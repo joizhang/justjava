@@ -1,6 +1,6 @@
-package com.joizhang.imooc.algorithms.chapter2.sort;
+package com.joizhang.imooc.sort;
 
-public class Selection {
+public class SelectionWithGeneric {
 
     public static void selectionSort(int[] arr, int n) {
         for (int i = 0; i < n; i++) {
@@ -14,5 +14,4 @@ public class Selection {
             Sorts.swap(arr, i, minIndex);
         }
     }
-
 }

@@ -23,6 +23,5 @@ public class ProfilingAspect {
 
     @Pointcut("execution(public * com.joizhang.twig.core..*.*(..))")
     public void methodsToBeProfiled() {
-        System.out.println("Hello");
     }
 }

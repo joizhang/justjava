@@ -7,10 +7,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>seckill</artifactId>
+    <artifactId>seckill-imooc</artifactId>
     <packaging>jar</packaging>
 
-    <name>seckill</name>
+    <name>seckill-imooc</name>
     <url>http://maven.apache.org</url>
 
     <properties>

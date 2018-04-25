@@ -61,8 +61,7 @@ public class SpringDaoConfig /*implements EnvironmentAware */ {
     @Bean
     @Autowired
     DataSourceTransactionManager dataSourceTransactionManager(DataSource dataSource) {
-        DataSourceTransactionManager dataSourceTransactionManager = new DataSourceTransactionManager(dataSource);
-        return dataSourceTransactionManager;
+        return new DataSourceTransactionManager(dataSource);
     }
 
 }

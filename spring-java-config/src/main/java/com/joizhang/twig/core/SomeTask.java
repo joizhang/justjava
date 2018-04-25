@@ -8,8 +8,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SomeTask {
 
+    private final UserService userService;
+
     @Autowired
-    private UserService userService;
+    public SomeTask(UserService userService) {
+        this.userService = userService;
+    }
 
     public void execute() {
     }

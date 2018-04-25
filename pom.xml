@@ -7,11 +7,11 @@
     <version>1.0</version>
     <modules>
         <module>imooc-learning</module>
-        <module>seckill</module>
-        <module>json</module>
+        <module>seckill-imooc</module>
+        <module>json-comparison</module>
         <module>spring-java-config</module>
         <module>advanced-java</module>
-        <module>guice-dependency-injection</module>
+        <module>guice-imooc</module>
         <module>shiro-imooc</module>
     </modules>
     <packaging>pom</packaging>

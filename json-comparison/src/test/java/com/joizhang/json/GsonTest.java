@@ -3,14 +3,13 @@ package com.joizhang.json;
 import com.google.gson.Gson;
 import org.junit.Test;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class GsonTest {
+
+    private static final String writeJson = System.getProperty("user.dir") + File.separator + "write.json";
 
     @Test
     public void testGsonRead() {
@@ -18,7 +17,7 @@ public class GsonTest {
         Gson gson = new Gson();
 
         try {
-            BufferedReader reader = new BufferedReader((new FileReader("D:\\workspace\\json\\read.json")));
+            BufferedReader reader = new BufferedReader((new FileReader(writeJson)));
             user = gson.fromJson(reader, User.class);
         } catch (IOException e) {
             e.printStackTrace();
@@ -41,7 +40,7 @@ public class GsonTest {
         user.setMessages(messages);
 
         try {
-            FileWriter writer = new FileWriter("D:\\workspace\\json\\write.json");
+            FileWriter writer = new FileWriter(writeJson);
             writer.write(gson.toJson(user));
         } catch (IOException e) {
             e.printStackTrace();

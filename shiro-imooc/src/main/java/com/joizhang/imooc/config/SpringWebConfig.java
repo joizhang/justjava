@@ -13,18 +13,15 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.ViewResolver;
-import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import java.nio.charset.Charset;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -34,9 +31,9 @@ import java.util.concurrent.TimeUnit;
 @EnableWebMvc
 @ComponentScan(basePackages = "com.joizhang.imooc",
         includeFilters =
-                {@ComponentScan.Filter(
-                        type = FilterType.ANNOTATION,
-                        value = {ControllerAdvice.class, Controller.class})})
+                {
+                        @ComponentScan.Filter(type = FilterType.ANNOTATION, value = {ControllerAdvice.class, Controller.class}),
+                })
 public class SpringWebConfig extends WebMvcConfigurerAdapter {
 
     @Bean
@@ -69,6 +66,7 @@ public class SpringWebConfig extends WebMvcConfigurerAdapter {
         StringHttpMessageConverter stringHttpMessageConverter = new StringHttpMessageConverter();
         stringHttpMessageConverter.setDefaultCharset(Charset.forName("UTF-8"));
         stringHttpMessageConverter.setSupportedMediaTypes(Collections.singletonList(MediaType.ALL));
+
         //避免IE执行AJAX时,返回JSON出现下载文件
         MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter = new MappingJackson2HttpMessageConverter();
         mappingJackson2HttpMessageConverter.setDefaultCharset(Charset.forName("UTF-8"));
@@ -79,18 +77,18 @@ public class SpringWebConfig extends WebMvcConfigurerAdapter {
         converters.add(mappingJackson2HttpMessageConverter);
     }
 
-    @Override
-    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-        configurer.enable();
-    }
+//    @Override
+//    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+//        configurer.enable();
+//    }
 
-    @Bean
-    public SimpleMappingExceptionResolver simpleMappingExceptionResolver() {
-        SimpleMappingExceptionResolver simpleMappingExceptionResolver = new SimpleMappingExceptionResolver();
-        Properties properties = new Properties();
-        properties.setProperty("org.apache.shiro.authz.UnauthorizedException", "/403.jsp");
-        simpleMappingExceptionResolver.setExceptionMappings(properties);
-        return simpleMappingExceptionResolver;
-    }
+//    @Bean
+//    public SimpleMappingExceptionResolver simpleMappingExceptionResolver() {
+//        SimpleMappingExceptionResolver simpleMappingExceptionResolver = new SimpleMappingExceptionResolver();
+//        Properties properties = new Properties();
+//        properties.setProperty("org.apache.shiro.authz.UnauthorizedException", "/403.jsp");
+//        simpleMappingExceptionResolver.setExceptionMappings(properties);
+//        return simpleMappingExceptionResolver;
+//    }
 
 }

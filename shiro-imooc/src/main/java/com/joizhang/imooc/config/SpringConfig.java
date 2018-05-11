@@ -13,8 +13,9 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration
 @ComponentScan(basePackages = "com.joizhang.imooc",
         excludeFilters =
-                {@ComponentScan.Filter(
-                        type = FilterType.ANNOTATION,
-                        value = {EnableWebMvc.class, ControllerAdvice.class, Controller.class})})
+                {
+                        @ComponentScan.Filter(type = FilterType.ANNOTATION, value = {EnableWebMvc.class, ControllerAdvice.class, Controller.class}),
+                        @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, value = {AppConfig.class, SpringWebConfig.class, RedisConfig.class})
+                })
 public class SpringConfig {
 }

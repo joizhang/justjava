@@ -13,6 +13,7 @@
         <module>advanced-java</module>
         <module>guice-imooc</module>
         <module>shiro-imooc</module>
+        <module>leetcode</module>
     </modules>
     <packaging>pom</packaging>
 

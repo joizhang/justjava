@@ -4,6 +4,8 @@ import com.joizhang.imooc.util.JedisUtil;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.UnknownSessionException;
 import org.apache.shiro.session.mgt.eis.AbstractSessionDAO;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.SerializationUtils;
 
@@ -13,6 +15,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
+@Component
 public class RedisSessionDao extends AbstractSessionDAO {
 
     @Resource
@@ -36,6 +39,7 @@ public class RedisSessionDao extends AbstractSessionDAO {
     @Override
     protected Serializable doCreate(Session session) {
         Serializable sessionId = generateSessionId(session);
+        assignSessionId(session, sessionId);
         saveSession(session);
         return sessionId;
     }

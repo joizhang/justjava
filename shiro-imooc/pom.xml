@@ -16,6 +16,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <spring-version>4.3.14.RELEASE</spring-version>
+        <jetty-version>9.4.9.v20180320</jetty-version>
         <shiro-version>1.4.0</shiro-version>
         <slf4j-log4j-version>1.7.12</slf4j-log4j-version>
         <jackson-version>2.9.5</jackson-version>
@@ -34,6 +35,12 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>${spring-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-servlet</artifactId>
+            <version>${jetty-version}</version>
         </dependency>
 
         <dependency>
@@ -88,12 +95,10 @@
         </dependency>
 
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>4.0.0</version>
-            <scope>provided</scope>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring-version}</version>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -108,7 +113,7 @@
                     <skip>true</skip>
                 </configuration>
             </plugin>
-            <plugin>
+            <!--<plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.4.9.v20180320</version>
@@ -126,7 +131,7 @@
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
 </project>

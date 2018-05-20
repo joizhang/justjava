@@ -9,7 +9,6 @@ public class Test {
      * @param args
      */
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         Filter f1 = new Filter();
         //查询id为10的用户
         f1.setId(10);

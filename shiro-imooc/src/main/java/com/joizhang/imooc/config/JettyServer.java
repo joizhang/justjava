@@ -31,7 +31,7 @@ public class JettyServer {
         handler.setContextPath(CONTEXT_PATH);
         FilterHolder filterHolder = new FilterHolder(DelegatingFilterProxy.class);
         filterHolder.setName("shiroFilter");
-        handler.addFilter(filterHolder, "/*",
+        handler.addFilter(filterHolder, MAPPING_URL,
                 EnumSet.of(DispatcherType.REQUEST, DispatcherType.FORWARD, DispatcherType.INCLUDE));
         handler.addEventListener(new ContextLoaderListener(context));
         return handler;

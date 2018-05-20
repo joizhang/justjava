@@ -1,5 +1,7 @@
 package com.joizhang.imooc.algorithms.chapter2;
 
+import java.util.Random;
+
 class Sorts {
 
     @SuppressWarnings("unchecked")
@@ -7,7 +9,7 @@ class Sorts {
         return v.compareTo(w) < 0;
     }
 
-    static void exch(Comparable[] a, int i, int j) {
+    static void exchange(Comparable[] a, int i, int j) {
         Comparable t = a[i];
         a[i] = a[j];
         a[j] = t;
@@ -27,6 +29,28 @@ class Sorts {
             }
         }
         return true;
+    }
+
+    static Integer[] generateRandomArray(int n, int rangeL, int rangeR) {
+        assert rangeL <= rangeR;
+        Integer[] arr = new Integer[n];
+        Random random = new Random(47);
+        for (int i = 0; i < n; i++) {
+            arr[i] = random.nextInt(rangeR - rangeL + 1) + rangeL;
+        }
+        return arr;
+    }
+
+    static Integer[] generateNearlyOrderedArray(int n, int swapTimes) {
+        Integer[] arr = new Integer[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = i;
+        }
+        Random random = new Random(47);
+        for (int i = 0; i < swapTimes; i++) {
+            Sorts.exchange(arr, i, random.nextInt(swapTimes));
+        }
+        return arr;
     }
 
 }

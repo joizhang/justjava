@@ -1,7 +1,6 @@
 package com.joizhang.imooc;
 
 import com.joizhang.imooc.config.SpringConfig;
-import com.joizhang.imooc.util.JedisUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

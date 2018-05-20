@@ -19,9 +19,9 @@ public class JdbcRealmTest {
     @Before
     public void setUp() {
         dataSource = new DruidDataSource();
-        dataSource.setUrl("");
-        dataSource.setUsername("");
-        dataSource.setPassword("");
+        dataSource.setUrl("jdbc:mysql://192.168.1.108:3306/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=false");
+        dataSource.setUsername("root");
+        dataSource.setPassword("123456");
     }
 
     @Test
@@ -39,7 +39,7 @@ public class JdbcRealmTest {
         SecurityUtils.setSecurityManager(defaultSecurityManager);
         Subject subject = SecurityUtils.getSubject();
 
-        UsernamePasswordToken token = new UsernamePasswordToken("tom", "123456");
+        UsernamePasswordToken token = new UsernamePasswordToken("admin", "admin");
         subject.login(token);
         assertTrue(subject.isAuthenticated());
 

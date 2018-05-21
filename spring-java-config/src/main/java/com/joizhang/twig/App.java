@@ -7,7 +7,7 @@ public class App {
     public static void main(String[] args) {
         new AnnotationConfigApplicationContext(App.class);
 
-        SomeTask task = new SomeTask();
-        task.execute();
+//        SomeTask task = new SomeTask();
+//        task.execute();
     }
 }

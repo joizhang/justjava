@@ -16,7 +16,7 @@ public class RedisTplTest {
 
     @Test
     public void set() throws Exception {
-        String key = String key = "seckill:" + seckillId;
+        String key = "seckill:";
     }
 
 }

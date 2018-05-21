@@ -110,13 +110,12 @@ public class ShiroConfig {
     public ShiroFilterFactoryBean shiroFilterFactoryBean(DefaultWebSecurityManager webSecurityManager) {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(webSecurityManager);
-        shiroFilterFactoryBean.setLoginUrl("/Account/Login");
+        shiroFilterFactoryBean.setLoginUrl("/login");
         shiroFilterFactoryBean.setSuccessUrl("/");
-        shiroFilterFactoryBean.setUnauthorizedUrl("/Account/Login");
+        shiroFilterFactoryBean.setUnauthorizedUrl("/login");
 
         HashMap<String, String> map = new HashMap<>();
         map.put("/hello", "anon");
-        map.put("/Account/**", "anon");
         map.put("/login", "anon");
         map.put("/assets/**", "anon");
         map.put("/app/**", "anon");

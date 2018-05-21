@@ -20,7 +20,7 @@ public class CustomRealm extends AuthorizingRealm {
 
     static {
         userMap = new HashMap<>(16);
-        userMap.put("admin", "123456");
+        userMap.put("admin", "ff7f73b854845fc02aa13b777ac090fb1d9ebfe16c8950c7d26499371dd0b479");
     }
 
     @Override

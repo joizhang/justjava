@@ -31,7 +31,7 @@ public class MvcConfig extends WebMvcConfigurationSupport {
     public ViewResolver viewResolver() {
         LOGGER.debug("setting up view resolver");
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setPrefix("/WEB-INF/views/");
+        viewResolver.setPrefix("/WEB-INF/templates/");
         viewResolver.setSuffix(".jsp");
         return viewResolver;
     }

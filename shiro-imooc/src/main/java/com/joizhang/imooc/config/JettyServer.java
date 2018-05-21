@@ -5,12 +5,14 @@ import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.servlet.FilterHolder;
+import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.util.resource.Resource;
 import org.eclipse.jetty.webapp.WebAppContext;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.DelegatingFilterProxy;
+import org.springframework.web.servlet.DispatcherServlet;
 
 import javax.servlet.DispatcherType;
 import java.net.MalformedURLException;
@@ -24,6 +26,8 @@ public class JettyServer {
     private static final String CONTEXT_PATH = "/";
 
     private static final String MAPPING_URL = "/*";
+
+    private static final String SERVLET_MAPPING_URL = "/";
 
     public void run() throws Exception {
         Server server = new Server();
@@ -43,11 +47,15 @@ public class JettyServer {
         webAppContext.setBaseResource(Resource.newResource(new URL(Application.class.getResource("/webapp/WEB-INF"), ".")));
         webAppContext.setClassLoader(Thread.currentThread().getContextClassLoader());
 
+        webAppContext.addEventListener(new ContextLoaderListener(context));
+
         FilterHolder filterHolder = new FilterHolder(DelegatingFilterProxy.class);
         filterHolder.setName("shiroFilter");
         EnumSet<DispatcherType> dispatcherTypes = EnumSet.of(DispatcherType.REQUEST, DispatcherType.FORWARD, DispatcherType.INCLUDE);
         webAppContext.addFilter(filterHolder, MAPPING_URL, dispatcherTypes);
-        webAppContext.addEventListener(new ContextLoaderListener(context));
+
+        webAppContext.addServlet(new ServletHolder(new DispatcherServlet(context)), SERVLET_MAPPING_URL);
+
         return webAppContext;
     }
 

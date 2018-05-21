@@ -45,7 +45,7 @@ public class IniRealmTest {
     public void testAuthorization() {
         subject.login(token);
         subject.checkRole("admin");
-        subject.checkPermission("user:del");
+        subject.checkPermission("user:delete");
     }
 
 }

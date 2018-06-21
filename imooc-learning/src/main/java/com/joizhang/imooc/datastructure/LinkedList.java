@@ -98,7 +98,7 @@ public class LinkedList<E> {
         for (int i = 0; i < index; i++) {
             prev = prev.next;
         }
-        Node retNode= prev.next;
+        Node retNode = prev.next;
         prev.next = retNode.next;
         retNode.next = null;
         size--;
@@ -107,6 +107,21 @@ public class LinkedList<E> {
 
     public E removeFirst(int index) {
         return remove(0);
+    }
+
+    public void removeElement(E e) {
+        Node prev = dummyHead;
+        while (prev.next != null) {
+            if (prev.next.e.equals(e)) {
+                break;
+            }
+            prev = prev.next;
+        }
+        if (prev.next != null) {
+            Node delNode = prev.next;
+            prev.next = delNode.next;
+            delNode.next = null;
+        }
     }
 
     @Override

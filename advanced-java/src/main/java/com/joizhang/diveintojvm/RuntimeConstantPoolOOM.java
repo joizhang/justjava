@@ -6,7 +6,8 @@ import java.util.List;
 /**
  * <pre>
  * 运行时常量池导致的内存溢出异常<br>
- * VM Args:-XX:PermSize=10M -XX:MaxPermSize=10M<br>
+ * VM Args:-XX:PermSize=10M -XX:MaxPermSize=10M
+ * <br>
  * Java HotSpot(TM) 64-Bit Server VM warning: ignoring option PermSize=10M; support was removed in 8.0
  * Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=10M; support was removed in 8.0
  * </pre>

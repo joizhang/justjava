@@ -16,7 +16,7 @@ public class FutureTaskSample {
 
         for (int i = 0; i < 10; i++) {
             // 传入Callable对象创建FutureTask对象
-            FutureTask<Integer> ft = new FutureTask<Integer>(new ComputeTask(i, "" + i));
+            FutureTask<Integer> ft = new FutureTask<>(new ComputeTask(i, "" + i));
             taskList.add(ft);
             // 提交给线程池执行任务，也可以通过exec.invokeAll(taskList)一次性提交所有任务;
             exec.submit(ft);

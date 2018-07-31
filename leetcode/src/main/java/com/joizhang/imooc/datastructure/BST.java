@@ -2,6 +2,11 @@ package com.joizhang.imooc.datastructure;
 
 import java.util.Stack;
 
+/**
+ * 二叉树
+ * @param <E>
+ * @author joizhang
+ */
 public class BST<E extends Comparable<E>> {
 
     private class Node {
@@ -215,13 +220,13 @@ public class BST<E extends Comparable<E>> {
      */
     private Node removeMin(Node node) {
         if (node.left == null) {
-            return getRightNode(node);
+            return getRightAndRemoveParent(node);
         }
         node.left = removeMin(node.left);
         return node;
     }
 
-    private Node getRightNode(Node node) {
+    private Node getRightAndRemoveParent(Node node) {
         Node rightNode = node.right;
         node.right = null;
         size--;
@@ -240,13 +245,13 @@ public class BST<E extends Comparable<E>> {
      */
     private Node removeMax(Node node) {
         if (node.right == null) {
-            return getLeftNode(node);
+            return getLeftAndRemoveParent(node);
         }
         node.right = removeMax(node.right);
         return node;
     }
 
-    private Node getLeftNode(Node node) {
+    private Node getLeftAndRemoveParent(Node node) {
         Node leftNode = node.left;
         node.left = null;
         size--;
@@ -270,11 +275,11 @@ public class BST<E extends Comparable<E>> {
             return node;
         } else {
             if (node.left == null) {
-                return getRightNode(node);
+                return getRightAndRemoveParent(node);
             }
 
             if (node.right == null) {
-                return getLeftNode(node);
+                return getLeftAndRemoveParent(node);
             }
 
             // 待删除节点左右子树均不为空的情况

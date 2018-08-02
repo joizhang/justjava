@@ -1,6 +1,11 @@
 package com.joizhang.imooc.datastructure;
 
 /**
+ * <pre>
+ * 基于堆实现的优先队列
+ *
+ * </pre>
+ *
  * @param <E>
  * @author joizhang
  */

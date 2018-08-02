@@ -1,4 +1,4 @@
-package com.joizhang.imooc.chapter2;
+package com.joizhang.imooc.algorithms.chapter2;
 
 import org.junit.Test;
 

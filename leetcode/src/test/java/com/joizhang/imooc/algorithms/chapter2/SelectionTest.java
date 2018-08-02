@@ -1,8 +1,8 @@
-package com.joizhang.imooc.chapter2;
+package com.joizhang.imooc.algorithms.chapter2;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 public class SelectionTest {
 

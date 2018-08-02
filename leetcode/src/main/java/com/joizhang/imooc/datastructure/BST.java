@@ -4,6 +4,7 @@ import java.util.Stack;
 
 /**
  * 二叉树
+ *
  * @param <E>
  * @author joizhang
  */
@@ -216,6 +217,7 @@ public class BST<E extends Comparable<E>> {
 
     /**
      * 删除掉以 node 为根的二分搜索树中的最小节点
+     *
      * @return 返回删除节点后新的二分搜索树的根
      */
     private Node removeMin(Node node) {
@@ -241,6 +243,7 @@ public class BST<E extends Comparable<E>> {
 
     /**
      * 删除掉以 node 为根的二分搜索树中的最小节点
+     *
      * @return 返回删除节点后新的二分搜索树的根
      */
     private Node removeMax(Node node) {

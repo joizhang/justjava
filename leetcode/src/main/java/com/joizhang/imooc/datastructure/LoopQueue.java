@@ -1,9 +1,9 @@
 package com.joizhang.imooc.datastructure;
 
 /**
- * @author joizhang
- *
  * 循环队列
+ *
+ * @author joizhang
  */
 public class LoopQueue<E> implements Queue<E> {
 
@@ -15,7 +15,7 @@ public class LoopQueue<E> implements Queue<E> {
 
     @SuppressWarnings("unchecked")
     public LoopQueue(int capacity) {
-        data = (E[])new Object[capacity + 1];
+        data = (E[]) new Object[capacity + 1];
         front = 0;
         tail = 0;
         size = 0;
@@ -47,7 +47,7 @@ public class LoopQueue<E> implements Queue<E> {
 
     @SuppressWarnings("unchecked")
     private void resize(int newCapacity) {
-        E[] newData = (E[])new Object[newCapacity + 1];
+        E[] newData = (E[]) new Object[newCapacity + 1];
         for (int i = 0; i < size; i++) {
             newData[i] = data[(i + front) % data.length];
         }
@@ -84,9 +84,9 @@ public class LoopQueue<E> implements Queue<E> {
         StringBuilder res = new StringBuilder();
         res.append(String.format("Queue: size = %d , capacity = %d\n", size, getCapacity()));
         res.append("front [");
-        for(int i = front ; i != tail ; i = (i + 1) % data.length){
+        for (int i = front; i != tail; i = (i + 1) % data.length) {
             res.append(data[i]);
-            if((i + 1) % data.length != tail)
+            if ((i + 1) % data.length != tail)
                 res.append(", ");
         }
         res.append("] tail");

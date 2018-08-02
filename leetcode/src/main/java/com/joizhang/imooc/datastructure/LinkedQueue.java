@@ -1,5 +1,10 @@
 package com.joizhang.imooc.datastructure;
 
+/**
+ * 链表实现的队列
+ *
+ * @param <E>
+ */
 public class LinkedQueue<E> implements Queue<E> {
 
     private class Node {

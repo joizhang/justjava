@@ -1,5 +1,10 @@
 package com.joizhang.imooc.algorithms.chapter2;
 
+/**
+ * 希尔排序
+ *
+ * @author joizhang
+ */
 public class Shell {
 
     public static void sort(Comparable[] a) {
@@ -13,7 +18,7 @@ public class Shell {
 
         while (h >= 1) {
             for (int i = h; i < n; i++) {
-                for (int j = i; j >= h && Sorts.less(a[j], a[j-h]); j -= h) {
+                for (int j = i; j >= h && Sorts.less(a[j], a[j - h]); j -= h) {
                     Sorts.exchange(a, j, j - h);
                 }
             }

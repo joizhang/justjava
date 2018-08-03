@@ -1,5 +1,10 @@
 package com.joizhang.imooc.algorithms.chapter2;
 
+/**
+ * 选择排序
+ *
+ * @author joizhang
+ */
 public class Selection {
 
     public static void sort(Comparable[] a) {

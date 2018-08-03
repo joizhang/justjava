@@ -1,5 +1,10 @@
 package com.joizhang.imooc.algorithms.chapter2;
 
+/**
+ * 插入排序
+ *
+ * @author joizhang
+ */
 public class Insertion {
 
     public static void sort(Comparable[] a) {

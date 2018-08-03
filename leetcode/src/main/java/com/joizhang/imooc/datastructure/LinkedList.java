@@ -2,6 +2,7 @@ package com.joizhang.imooc.datastructure;
 
 /**
  * 链表
+ *
  * @param <E>
  * @author joizhang
  */

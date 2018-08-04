@@ -3,7 +3,7 @@ package com.joizhang.leetcode.set;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class IntersectionOfTwoArrays2 {
+class IntersectionOfTwoArrays2 {
 
     public int[] intersect(int[] nums1, int[] nums2) {
         HashMap<Integer, Integer> map = new HashMap<>();

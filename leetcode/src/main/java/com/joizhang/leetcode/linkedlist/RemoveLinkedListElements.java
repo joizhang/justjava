@@ -3,7 +3,7 @@ package com.joizhang.leetcode.linkedlist;
 /**
  * 203 Remove all elements from a linked list of integers that have value val.
  */
-public class RemoveLinkedListElements {
+class RemoveLinkedListElements {
 
     public ListNode removeElements(ListNode head, int val) {
         while (head != null && head.val == val) {

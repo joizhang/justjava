@@ -1,4 +1,4 @@
-package com.joizhang.imooc.algorithms.chapter2;
+package com.joizhang.imooc.algorithms;
 
 import java.util.Random;
 

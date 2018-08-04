@@ -29,6 +29,13 @@ public class Array<E> {
         this(10);
     }
 
+    @SuppressWarnings("unchecked")
+    public Array(E[] arr) {
+        data = (E[]) new Object[arr.length];
+        System.arraycopy(arr, 0, data, 0, arr.length);
+        size = arr.length;
+    }
+
     /**
      * 获取数组的容量
      *
@@ -212,6 +219,7 @@ public class Array<E> {
 
     /**
      * 交换i, j位置的元素
+     *
      * @param i
      * @param j
      */

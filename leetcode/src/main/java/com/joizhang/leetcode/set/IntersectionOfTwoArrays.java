@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * 349. Intersection of Two Arrays
  */
-public class IntersectionOfTwoArrays {
+class IntersectionOfTwoArrays {
 
     public int[] intersection(int[] nums1, int[] nums2) {
         HashSet<Integer> set = new HashSet<>();

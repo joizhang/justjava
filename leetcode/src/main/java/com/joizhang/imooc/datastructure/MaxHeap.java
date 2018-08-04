@@ -24,6 +24,18 @@ public class MaxHeap<E extends Comparable<E>> {
         data = new Array<>();
     }
 
+    /**
+     * 将任意数组整理成堆的形状<br>
+     * 1. 将n个元素逐个插入到一个空堆中，算法复杂度是O(nlogn)<br>
+     * 2. heapify的过程，算法复杂度是O(n)
+     */
+    public MaxHeap(E[] arr) {
+        data = new Array<>(arr);
+        for (int i = parent(arr.length - 1); i >= 0; i--) {
+            siftDown(i);
+        }
+    }
+
     public int size() {
         return data.getSize();
     }
@@ -94,6 +106,11 @@ public class MaxHeap<E extends Comparable<E>> {
         return ret;
     }
 
+    /**
+     * 下沉
+     *
+     * @param k
+     */
     private void siftDown(int k) {
         while (leftChild(k) < data.getSize()) {
             int j = leftChild(k);
@@ -107,6 +124,20 @@ public class MaxHeap<E extends Comparable<E>> {
             data.swap(k, j);
             k = j;
         }
+    }
+
+    /**
+     * 取出最大元素后，放入一个新元素<br>
+     * 1. 可以先extractMax，再add，两次O(logn)的操作<br>
+     * 2. 可以直接将堆顶元素替换以后sift down，一次O(logn)的操作
+     *
+     * @param e
+     */
+    public E replace(E e) {
+        E ret = findMax();
+        data.set(0, e);
+        siftDown(0);
+        return ret;
     }
 
 }

@@ -23,11 +23,13 @@ public class MyWebSocketHandler extends SimpleChannelInboundHandler<Object> {
     private static final String WEB_SOCKET_URL = "ws://localhost:8888/websocket";
     private WebSocketServerHandshaker handshaker;
 
+
+
     /**
      * 服务端处理客户端websocket请求的核心方法
      */
     @Override
-    protected void messageReceived(ChannelHandlerContext ctx, Object msg) throws Exception {
+    protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
         if (msg instanceof FullHttpRequest) {
             // 处理客户端向服务端发起http握手请求的业务
             handleHttpRequest(ctx, (FullHttpRequest) msg);

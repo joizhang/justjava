@@ -10,7 +10,9 @@ import java.util.Scanner;
 
 public class FileOperation {
 
-    // 读取文件名称为filename中的内容，并将其中包含的所有词语放进words中
+    /**
+     * 读取文件名称为filename中的内容，并将其中包含的所有词语放进words中
+     */
     public static boolean readFile(String filename, List<String> words) {
         if (filename == null || words == null) {
             System.out.println("filename is null or words is null");
@@ -26,8 +28,9 @@ public class FileOperation {
                 FileInputStream fis = new FileInputStream(file);
                 scanner = new Scanner(new BufferedInputStream(fis), "UTF-8");
                 scanner.useLocale(Locale.ENGLISH);
-            } else
+            } else {
                 return false;
+            }
         } catch (IOException ioe) {
             System.out.println("Cannot open " + filename);
             return false;
@@ -47,18 +50,24 @@ public class FileOperation {
                     words.add(word);
                     start = firstCharacterIndex(contents, i);
                     i = start + 1;
-                } else
+                } else {
                     i++;
+                }
         }
 
         return true;
     }
 
-    // 寻找字符串s中，从start的位置开始的第一个字母字符的位置
+    /**
+     * 寻找字符串s中，从start的位置开始的第一个字母字符的位置
+     */
+
     private static int firstCharacterIndex(String s, int start) {
-        for (int i = start; i < s.length(); i++)
-            if (Character.isLetter(s.charAt(i)))
+        for (int i = start; i < s.length(); i++) {
+            if (Character.isLetter(s.charAt(i))) {
                 return i;
+            }
+        }
         return s.length();
     }
 

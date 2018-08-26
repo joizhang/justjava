@@ -1,5 +1,10 @@
 package com.joizhang.imooc.datastructure;
 
+/**
+ * @author joizhang
+ * @param <K>
+ * @param <V>
+ */
 public class LinkedListMap<K, V> implements Map<K, V> {
 
     private class Node {

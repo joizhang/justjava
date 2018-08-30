@@ -32,6 +32,8 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 相当于spring-mvc.xml
+ *
+ * @author joizhang
  */
 @Configuration
 @EnableWebMvc

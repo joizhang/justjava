@@ -19,6 +19,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.EnumSet;
 
+/**
+ * @author joizhang
+ */
 public class JettyServer {
 
     private static final int PORT = 8080;
@@ -33,13 +36,14 @@ public class JettyServer {
         Server server = new Server();
         //JVM退出时关闭Jetty
         server.setStopAtShutdown(true);
-        ServerConnector connector = new ServerConnector(server);
-        connector.setPort(PORT);
-        connector.setReuseAddress(false);
-        server.setConnectors(new Connector[]{connector});
-        server.setHandler(webAppContext(springApplicationContext()));
-        server.start();
-        server.join();
+        try(ServerConnector connector = new ServerConnector(server)) {
+            connector.setPort(PORT);
+            connector.setReuseAddress(false);
+            server.setConnectors(new Connector[]{connector});
+            server.setHandler(webAppContext(springApplicationContext()));
+            server.start();
+            server.join();
+        }
     }
 
     private WebAppContext webAppContext(WebApplicationContext context) throws MalformedURLException {

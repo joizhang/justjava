@@ -12,7 +12,6 @@
         <module>spring-java-config</module>
         <module>advanced-java</module>
         <module>guice-imooc</module>
-        <module>shiro-imooc</module>
         <module>leetcode</module>
         <module>deeplearning</module>
     </modules>

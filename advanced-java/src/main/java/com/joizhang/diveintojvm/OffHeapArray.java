@@ -5,7 +5,7 @@ import sun.misc.Unsafe;
 import java.lang.reflect.Field;
 
 /**
- * 堆外数组，jdk 8 及一下版本
+ * 堆外数组，jdk 8 及以下版本
  *
  * @author from https://www.baeldung.com/java-unsafe
  */

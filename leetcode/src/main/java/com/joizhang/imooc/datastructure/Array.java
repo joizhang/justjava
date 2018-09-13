@@ -17,6 +17,7 @@ public class Array<E> {
      *
      * @param capacity
      */
+    @SuppressWarnings("unchecked")
     public Array(int capacity) {
         data = (E[]) new Object[capacity];
         size = 0;

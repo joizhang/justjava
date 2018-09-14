@@ -8,7 +8,7 @@ import java.util.List;
  *
  * @author joizhang
  */
-public class Combinations2 {
+public class CombinationsOptimization {
 
     private List<List<Integer>> res;
 

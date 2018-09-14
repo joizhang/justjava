@@ -14,8 +14,6 @@ public class Array<E> {
 
     /**
      * 构造函数，传入数组的容量capacity构造Array
-     *
-     * @param capacity
      */
     @SuppressWarnings("unchecked")
     public Array(int capacity) {
@@ -39,8 +37,6 @@ public class Array<E> {
 
     /**
      * 获取数组的容量
-     *
-     * @return
      */
     public int getCapacity() {
         return data.length;
@@ -48,8 +44,6 @@ public class Array<E> {
 
     /**
      * 获取数组中的元素个数
-     *
-     * @return
      */
     public int getSize() {
         return size;
@@ -57,8 +51,6 @@ public class Array<E> {
 
     /**
      * 返回数组是否为空
-     *
-     * @return
      */
     public boolean isEmpty() {
         return size == 0;
@@ -66,9 +58,6 @@ public class Array<E> {
 
     /**
      * 在index索引的位置插入一个新元素e
-     *
-     * @param index
-     * @param e
      */
     public void add(int index, E e) {
 
@@ -91,8 +80,6 @@ public class Array<E> {
 
     /**
      * 向所有元素后添加一个新元素
-     *
-     * @param e
      */
     public void addLast(E e) {
         add(size, e);
@@ -109,9 +96,6 @@ public class Array<E> {
 
     /**
      * 获取index索引位置的元素
-     *
-     * @param index
-     * @return
      */
     public E get(int index) {
         if (index < 0 || index >= size) {
@@ -122,9 +106,6 @@ public class Array<E> {
 
     /**
      * 修改index索引位置的元素为e
-     *
-     * @param index
-     * @param e
      */
     public void set(int index, E e) {
         if (index < 0 || index >= size) {
@@ -135,9 +116,6 @@ public class Array<E> {
 
     /**
      * 查找数组中是否有元素e
-     *
-     * @param e
-     * @return
      */
     public boolean contains(E e) {
         for (int i = 0; i < size; i++) {
@@ -150,9 +128,6 @@ public class Array<E> {
 
     /**
      * 查找数组中元素e所在的索引，如果不存在元素e，则返回-1
-     *
-     * @param e
-     * @return
      */
     public int find(E e) {
         for (int i = 0; i < size; i++) {
@@ -165,9 +140,6 @@ public class Array<E> {
 
     /**
      * 从数组中删除index位置的元素, 返回删除的元素
-     *
-     * @param index
-     * @return
      */
     public E remove(int index) {
         if (index < 0 || index >= size) {
@@ -190,8 +162,6 @@ public class Array<E> {
 
     /**
      * 从数组中删除第一个元素, 返回删除的元素
-     *
-     * @return
      */
     public E removeFirst() {
         return remove(0);
@@ -199,8 +169,6 @@ public class Array<E> {
 
     /**
      * 从数组中删除最后一个元素, 返回删除的元素
-     *
-     * @return
      */
     public E removeLast() {
         return remove(size - 1);
@@ -220,9 +188,6 @@ public class Array<E> {
 
     /**
      * 交换i, j位置的元素
-     *
-     * @param i
-     * @param j
      */
     public void swap(int i, int j) {
         if (i < 0 || i >= size || j < 0 || j >= size) {
@@ -235,7 +200,6 @@ public class Array<E> {
 
     @Override
     public String toString() {
-
         StringBuilder res = new StringBuilder();
         res.append(String.format("Array: size = %d , capacity = %d\n", size, data.length));
         res.append('[');
@@ -252,10 +216,12 @@ public class Array<E> {
     /**
      * 将数组空间的容量变成newCapacity大小
      */
+    @SuppressWarnings("unchecked")
     private void resize(int newCapacity) {
         E[] newData = (E[]) new Object[newCapacity];
-        for (int i = 0; i < size; i++)
+        for (int i = 0; i < size; i++){
             newData[i] = data[i];
+        }
         data = newData;
     }
 

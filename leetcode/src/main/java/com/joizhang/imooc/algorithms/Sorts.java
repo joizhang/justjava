@@ -2,7 +2,32 @@ package com.joizhang.imooc.algorithms;
 
 import java.util.Random;
 
+/**
+ * @author joizhang
+ */
 class Sorts {
+
+    /**
+     * 排序类型
+     */
+    enum SortType {
+        /**
+         * 选择排序
+         */
+        SELECTION,
+        /**
+         * 插入排序
+         */
+        INSERTION,
+        /**
+         * 希尔排序
+         */
+        SHELL,
+        /**
+         * 归并排序
+         */
+        MERGE
+    }
 
     @SuppressWarnings("unchecked")
     static boolean less(Comparable v, Comparable w) {

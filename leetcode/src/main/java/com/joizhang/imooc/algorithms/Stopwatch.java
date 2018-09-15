@@ -1,5 +1,8 @@
 package com.joizhang.imooc.algorithms;
 
+/**
+ * @author joizhang
+ */
 public class Stopwatch {
 
     private final long start;

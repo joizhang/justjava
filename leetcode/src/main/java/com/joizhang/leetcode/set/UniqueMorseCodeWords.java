@@ -5,7 +5,7 @@ import java.util.TreeSet;
 /**
  * 804. Unique Morse Code Words
  */
-public class UniqueMorseCodeWords {
+class UniqueMorseCodeWords {
 
     public int uniqueMorseRepresentations(String[] words) {
         String[] codes = {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};

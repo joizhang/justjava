@@ -11,7 +11,9 @@ package com.joizhang.diveintojvm;
 public class ReferenceCountingGC {
 
     private static final int ONE_MB = 1024 * 1024;
-    public Object instance = null;
+
+    private Object instance = null;
+
     /**
      * 这个成员属性的唯一意义就是占点内存，以便在GC日志中能清楚是否被回收过
      */

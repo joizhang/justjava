@@ -3,7 +3,7 @@ package com.joizhang.leetcode.hashtable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LongestSubstringWithoutRepeating {
+class LongestSubstringWithoutRepeating {
 
     public int lengthOfLongestSubstring(String s) {
         int maxLength = 0;

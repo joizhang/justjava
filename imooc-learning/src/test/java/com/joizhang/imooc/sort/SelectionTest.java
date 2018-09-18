@@ -1,6 +1,6 @@
 package com.joizhang.imooc.sort;
 
-import com.joizhang.imooc.algorithms.chapter2.Selection;
+import com.joizhang.imooc.algorithms.sort.Selection;
 import org.junit.Test;
 
 public class SelectionTest {

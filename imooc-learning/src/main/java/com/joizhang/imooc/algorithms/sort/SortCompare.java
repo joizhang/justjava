@@ -1,4 +1,4 @@
-package com.joizhang.imooc.algorithms.chapter2;
+package com.joizhang.imooc.algorithms.sort;
 
 public class SortCompare {
 
@@ -12,6 +12,12 @@ public class SortCompare {
         }
         if ("Shell".equals(algo)) {
             Shell.sort(a);
+        }
+        if ("Merge".equals(algo)) {
+            Merge.sort(a);
+        }
+        if ("Quick".equals(algo)) {
+            Quick.sort(a);
         }
         return stopwatch.elapsedTime();
     }

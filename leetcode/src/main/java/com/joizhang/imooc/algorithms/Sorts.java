@@ -7,6 +7,8 @@ import java.util.Random;
  */
 class Sorts {
 
+    private static final Random RANDOM = new Random(47);
+
     /**
      * 排序类型
      */
@@ -59,9 +61,8 @@ class Sorts {
     static Integer[] generateRandomArray(int n, int rangeL, int rangeR) {
         assert rangeL <= rangeR;
         Integer[] arr = new Integer[n];
-        Random random = new Random(47);
         for (int i = 0; i < n; i++) {
-            arr[i] = random.nextInt(rangeR - rangeL + 1) + rangeL;
+            arr[i] = RANDOM.nextInt(rangeR - rangeL + 1) + rangeL;
         }
         return arr;
     }
@@ -71,9 +72,8 @@ class Sorts {
         for (int i = 0; i < n; i++) {
             arr[i] = i;
         }
-        Random random = new Random(47);
         for (int i = 0; i < swapTimes; i++) {
-            Sorts.exchange(arr, i, random.nextInt(swapTimes));
+            Sorts.exchange(arr, i, RANDOM.nextInt(swapTimes));
         }
         return arr;
     }

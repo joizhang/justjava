@@ -1,7 +1,7 @@
 package com.joizhang.leetcode.linkedlist;
 
 /**
- * 203 Remove all elements from a linked list of integers that have value val.
+ * 203 Remove all elements from a linked list of integers that have val val.
  */
 class RemoveLinkedListElements {
 

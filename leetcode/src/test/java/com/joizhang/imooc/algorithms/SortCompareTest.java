@@ -9,7 +9,8 @@ public class SortCompareTest {
         SortCompare.compareWithRandomArray(50000, Sorts.SortType.SELECTION,
                 Sorts.SortType.INSERTION,
                 Sorts.SortType.SHELL,
-                Sorts.SortType.MERGE);
+                Sorts.SortType.MERGE,
+                Sorts.SortType.QUICK);
     }
 
     @Test
@@ -17,7 +18,8 @@ public class SortCompareTest {
         SortCompare.compareWithNearlyOrderedArray(10000, Sorts.SortType.SELECTION,
                 Sorts.SortType.INSERTION,
                 Sorts.SortType.SHELL,
-                Sorts.SortType.MERGE);
+                Sorts.SortType.MERGE,
+                Sorts.SortType.QUICK);
     }
 
 }

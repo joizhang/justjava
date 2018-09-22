@@ -28,9 +28,16 @@ class Sorts {
         /**
          * 归并排序
          */
-        MERGE
+        MERGE,
+        /**
+         * 快速排序
+         */
+        QUICK,
     }
 
+    /**
+     * v less than w
+     */
     @SuppressWarnings("unchecked")
     static boolean less(Comparable v, Comparable w) {
         return v.compareTo(w) < 0;
@@ -76,6 +83,17 @@ class Sorts {
             Sorts.exchange(arr, i, RANDOM.nextInt(swapTimes));
         }
         return arr;
+    }
+
+    static void insertionSort(Comparable[] a, int l, int r) {
+        for (int i = l + 1; i <= r; i++) {
+            Comparable e = a[i];
+            int j;
+            for (j = i; j > l && Sorts.less(e, a[j-1]); j--) {
+                a[j] = a[j - 1];
+            }
+            a[j] = e;
+        }
     }
 
 }

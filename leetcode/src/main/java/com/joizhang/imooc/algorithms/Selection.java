@@ -7,6 +7,8 @@ package com.joizhang.imooc.algorithms;
  */
 public class Selection {
 
+    private Selection() {}
+
     public static void sort(Comparable[] a) {
         int n = a.length;
         for (int i = 0; i < n; i++) {

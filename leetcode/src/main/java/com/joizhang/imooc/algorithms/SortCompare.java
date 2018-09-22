@@ -5,6 +5,8 @@ package com.joizhang.imooc.algorithms;
  */
 public class SortCompare {
 
+    private SortCompare() {}
+
     private static double time(Sorts.SortType sortType, Comparable[] a) {
         Stopwatch stopwatch = new Stopwatch();
         if (Sorts.SortType.SELECTION.equals(sortType)) {
@@ -15,6 +17,8 @@ public class SortCompare {
             Shell.sort(a);
         } else if (Sorts.SortType.MERGE.equals(sortType)) {
             Merge.sort(a);
+        } else if (Sorts.SortType.QUICK.equals(sortType)) {
+            Quick.sort(a);
         }
         return stopwatch.elapsedTime();
     }

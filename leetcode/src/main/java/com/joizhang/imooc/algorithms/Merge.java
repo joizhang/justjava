@@ -7,6 +7,8 @@ package com.joizhang.imooc.algorithms;
  */
 public class Merge {
 
+    private Merge() {}
+
     public static void sort(Comparable[] a) {
         int n = a.length;
         mergeSort(a, 0, n - 1);
@@ -18,7 +20,7 @@ public class Merge {
     private static void mergeSort(Comparable[] a, int l, int r) {
         // 优化：在小到一定程度时使用插入排序
         if (r - l <= 15) {
-            insertionSort(a, l, r);
+            Sorts.insertionSort(a, l, r);
             return;
         }
         int mid = l + (r - l) / 2;
@@ -27,17 +29,6 @@ public class Merge {
         // 优化：对于近乎有序的数组
         if (Sorts.less(a[mid + 1], a[mid])) {
             merge(a, l, mid, r);
-        }
-    }
-
-    private static void insertionSort(Comparable[] a, int l, int r) {
-        for (int i = l + 1; i <= r; i++) {
-            Comparable e = a[i];
-            int j;
-            for (j = i; j > l && Sorts.less(e, a[j-1]); j--) {
-                a[j] = a[j - 1];
-            }
-            a[j] = e;
         }
     }
 

@@ -31,6 +31,7 @@ public class Quick {
     /**
      * <p>对 a[l...r] 部分进行 partition 操作
      * <p>返回 j 使得 a[l...j-1] < a[j]; a[j+1...r] > a[j]
+     * <p>当数组长度较大，且包含大量重复元素时会产生 stack overflow
      */
     @SuppressWarnings("unused")
     private static int partition(Comparable[] a, int l, int r) {

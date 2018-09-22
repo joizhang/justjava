@@ -8,7 +8,7 @@ import java.util.List;
  *
  * @author joizhang
  */
-public class Combinations {
+class Combinations {
 
     private List<List<Integer>> res;
 

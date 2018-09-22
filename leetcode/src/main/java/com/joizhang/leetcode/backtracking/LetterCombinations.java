@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @author joizhang
  */
-public class LetterCombinations {
+class LetterCombinations {
 
     private String[] letterMap = {
             " ",

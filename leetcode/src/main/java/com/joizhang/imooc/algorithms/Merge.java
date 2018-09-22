@@ -13,10 +13,10 @@ public class Merge {
     }
 
     /**
-     * 递归使用归并排序，对arr[l...r]的范围进行排序
+     * 递归使用归并排序，对 a[l...r]的范围进行排序
      */
     private static void mergeSort(Comparable[] a, int l, int r) {
-        // 优化：在小大一定程度时使用插入排序
+        // 优化：在小到一定程度时使用插入排序
         if (r - l <= 15) {
             insertionSort(a, l, r);
             return;
@@ -24,7 +24,7 @@ public class Merge {
         int mid = l + (r - l) / 2;
         mergeSort(a, l, mid);
         mergeSort(a, mid + 1, r);
-        // 优化：对近乎有序的数组
+        // 优化：对于近乎有序的数组
         if (Sorts.less(a[mid + 1], a[mid])) {
             merge(a, l, mid, r);
         }
@@ -42,9 +42,9 @@ public class Merge {
     }
 
     /**
-     * 将arr[l...mid]和arr[mid+1...r]两部分进行归并
+     * 将 a[l...mid] 和 a[mid+1...r] 两部分进行归并
      */
-    private static void merge(Comparable[] a, int l, int mid, int r) {
+    static void merge(Comparable[] a, int l, int mid, int r) {
         Comparable[] aux = new Comparable[r - l + 1];
         for (int i = l; i <= r; i++) {
             aux[i - l] = a[i];

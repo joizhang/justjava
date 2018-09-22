@@ -5,7 +5,7 @@ package com.joizhang.leetcode.backtracking;
  *
  * @author joizhang
  */
-public class WordSearch {
+class WordSearch {
 
     private int[][] d = {
             {-1, 0},

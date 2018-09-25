@@ -138,8 +138,9 @@ public class LinkedList<E> {
 //            res.append(cur).append("->");
 //            cur = cur.next;
 //        }
-        for (Node cur = dummyHead.next; cur != null; cur = cur.next)
+        for (Node cur = dummyHead.next; cur != null; cur = cur.next) {
             res.append(cur).append("->");
+        }
         res.append("NULL");
 
         return res.toString();

@@ -56,7 +56,7 @@ public class BSTTest {
         }
         System.out.println(nums);
 
-        for (int i =1; i < nums.size(); i++) {
+        for (int i = 1; i < nums.size(); i++) {
             if (nums.get(i - 1) < nums.get(i)) {
                 throw new IllegalArgumentException("Error " + i + ": " + nums.get(i) + " " + (i - 1) + ": " + nums.get(i - 1));
             }

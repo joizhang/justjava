@@ -13,7 +13,7 @@ class RemoveLinkedListElements {
             return null;
         }
         ListNode prev = head;
-        while(prev.next != null) {
+        while (prev.next != null) {
             if (prev.next.val == val) {
                 prev.next = prev.next.next;
             } else {
@@ -31,7 +31,7 @@ class RemoveLinkedListElements {
         dummyHead.next = head;
 
         ListNode prev = dummyHead;
-        while(prev.next != null) {
+        while (prev.next != null) {
             if (prev.next.val == val) {
                 prev.next = prev.next.next;
             } else {
@@ -45,7 +45,7 @@ class RemoveLinkedListElements {
      * 递归
      */
     public ListNode removeElements3(ListNode head, int val) {
-        if(head == null){
+        if (head == null) {
             return null;
         }
 

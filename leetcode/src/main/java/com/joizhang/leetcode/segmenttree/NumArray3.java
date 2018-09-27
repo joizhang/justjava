@@ -3,6 +3,7 @@ package com.joizhang.leetcode.segmenttree;
 /**
  * 307. Range Sum Query - Mutable<br>
  * overtime
+ *
  * @see NumArray4
  */
 @Deprecated

@@ -219,7 +219,7 @@ public class Array<E> {
     @SuppressWarnings("unchecked")
     private void resize(int newCapacity) {
         E[] newData = (E[]) new Object[newCapacity];
-        for (int i = 0; i < size; i++){
+        for (int i = 0; i < size; i++) {
             newData[i] = data[i];
         }
         data = newData;

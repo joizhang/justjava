@@ -129,13 +129,14 @@ public class SegmentTree<E> {
             return query(leftTreeIndex, l, mid, queryL, queryR);
         }
 
-        E leftResult = query(leftTreeIndex, l , mid, queryL, mid);
+        E leftResult = query(leftTreeIndex, l, mid, queryL, mid);
         E rightResult = query(rightTreeIndex, mid + 1, r, mid + 1, queryR);
         return merger.merge(leftResult, rightResult);
     }
 
     /**
      * 更新 index 位置为 e，时间复杂度为 O(logn)
+     *
      * @param index
      * @param e
      */

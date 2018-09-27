@@ -7,11 +7,11 @@ public class Stopwatch {
 
     private final long start;
 
-    Stopwatch() {
+    public Stopwatch() {
         start = System.currentTimeMillis();
     }
 
-    double elapsedTime() {
+    public double elapsedTime() {
         long now = System.currentTimeMillis();
         return (now - start) / 1000.0;
     }

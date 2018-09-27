@@ -27,7 +27,7 @@ class WordSearch {
 
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
-                if (searchWord(board, word, 0, i, j))  {
+                if (searchWord(board, word, 0, i, j)) {
                     return true;
                 }
             }
@@ -51,7 +51,7 @@ class WordSearch {
                 int newY = startY + d[i][1];
                 if (inArea(newX, newY) && !visited[newX][newY] &&
                         searchWord(board, word, index + 1, newX, newY)) {
-                        return true;
+                    return true;
                 }
             }
             visited[startX][startY] = false;

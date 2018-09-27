@@ -1,11 +1,10 @@
 package com.joizhang.imooc.datastructure;
 
+import com.joizhang.imooc.algorithms.FileOperation;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * @author joizhang

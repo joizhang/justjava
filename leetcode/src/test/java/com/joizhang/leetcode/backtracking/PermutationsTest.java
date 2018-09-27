@@ -2,8 +2,6 @@ package com.joizhang.leetcode.backtracking;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class PermutationsTest {
 
     @Test

@@ -1,5 +1,6 @@
 package com.joizhang.imooc.datastructure;
 
+import com.joizhang.imooc.algorithms.FileOperation;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ public class LinkedListMapTest {
         System.out.println(words.size());
 
         LinkedListMap<String, Integer> map = new LinkedListMap<>();
-        for (String word: words) {
+        for (String word : words) {
             if (map.contains(word)) {
                 map.set(word, map.get(word) + 1);
             } else {

@@ -13,12 +13,12 @@ public class SparseGraph implements Graph {
     /**
      * 节点数
      */
-    private final int V;
+    private final int n;
 
     /**
      * 边数
      */
-    private int E;
+    private int m;
 
     /**
      * 是否为有向图
@@ -31,31 +31,32 @@ public class SparseGraph implements Graph {
     private List<Integer>[] g;
 
     @SuppressWarnings("unchecked")
-    public SparseGraph(int v, boolean directed) {
-        if (v < 0) {
+    public SparseGraph(int n, boolean directed) {
+        if (n < 0) {
             throw new IllegalArgumentException("Number of vertices must be non-negative.");
         }
-        this.V = v;
+        this.n = n;
+        this.m = 0;
         this.directed = directed;
-        g = new List[v];
-        for (int i = 0; i < v; i++) {
+        g = new List[n];
+        for (int i = 0; i < n; i++) {
             g[i] = new ArrayList<>();
         }
     }
 
     @Override
     public int V() {
-        return V;
+        return n;
     }
 
     @Override
     public int E() {
-        return E;
+        return m;
     }
 
     @Override
     public void addEdge(int v, int w) {
-        boolean valid = (v >= 0 && v < V) && (w >= 0 && w < V);
+        boolean valid = (v >= 0 && v < n) && (w >= 0 && w < n);
         if (!valid) {
             throw new IllegalArgumentException("Argument v and w must bigger than zero and less than vertex number.");
         }
@@ -66,12 +67,12 @@ public class SparseGraph implements Graph {
         if (v != w && !directed) {
             g[w].add(v);
         }
-        E++;
+        m++;
     }
 
     @Override
     public boolean hasEdge(int v, int w) {
-        boolean valid = (v >= 0 && v < V) && (w >= 0 && w < V);
+        boolean valid = (v >= 0 && v < n) && (w >= 0 && w < n);
         if (!valid) {
             throw new IllegalArgumentException("Argument v and w must bigger than zero and less than vertex number.");
         }
@@ -86,8 +87,8 @@ public class SparseGraph implements Graph {
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder();
-        s.append(V).append(" vertices, ").append(E).append(" edges\n");
-        for (int v = 0; v < V; v++) {
+        s.append(n).append(" vertices, ").append(m).append(" edges\n");
+        for (int v = 0; v < n; v++) {
             s.append(v).append(": ");
             for (int w : g[v]) {
                 s.append(w).append(" ");

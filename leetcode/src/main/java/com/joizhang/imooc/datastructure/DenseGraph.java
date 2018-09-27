@@ -13,12 +13,12 @@ public class DenseGraph implements Graph {
     /**
      * 节点数
      */
-    private final int V;
+    private final int n;
 
     /**
      * 边数
      */
-    private int E;
+    private int m;
 
     /**
      * 是否为有向图
@@ -30,45 +30,45 @@ public class DenseGraph implements Graph {
      */
     private boolean[][] g;
 
-    public DenseGraph(int v, boolean directed) {
-        if (v < 0) {
+    public DenseGraph(int n, boolean directed) {
+        if (n < 0) {
             throw new IllegalArgumentException("Number of vertices must be non-negative.");
         }
-        this.V = v;
-        this.E = 0;
+        this.n = n;
+        this.m = 0;
         this.directed = directed;
-        g = new boolean[v][v];
+        g = new boolean[n][n];
     }
 
     @Override
     public int V() {
-        return V;
+        return n;
     }
 
     @Override
     public int E() {
-        return E;
+        return m;
     }
 
     @Override
     public void addEdge(int v, int w) {
-        boolean valid = (v >= 0 && v < V) && (w >= 0 && w < V);
+        boolean valid = (v >= 0 && v < n) && (w >= 0 && w < n);
         if (!valid) {
             throw new IllegalArgumentException("Argument v and w must bigger than zero and less than vertex number.");
         }
-        if(hasEdge(v, w)) {
+        if (hasEdge(v, w)) {
             return;
         }
         g[v][w] = true;
         if (!directed) {
             g[w][v] = true;
         }
-        E++;
+        m++;
     }
 
     @Override
     public boolean hasEdge(int v, int w) {
-        boolean valid = (v >= 0 && v < V) && (w >= 0 && w < V);
+        boolean valid = (v >= 0 && v < n) && (w >= 0 && w < n);
         if (!valid) {
             throw new IllegalArgumentException("Argument v and w must bigger than zero and less than vertex number.");
         }
@@ -78,7 +78,7 @@ public class DenseGraph implements Graph {
     @Override
     public Iterable<Integer> adj(int v) {
         List<Integer> adj = new ArrayList<>();
-        for (int i = 0; i < V; i++) {
+        for (int i = 0; i < n; i++) {
             if (g[v][i]) {
                 adj.add(i);
             }
@@ -89,9 +89,9 @@ public class DenseGraph implements Graph {
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder();
-        s.append(V).append(" vertices, ").append(E).append(" edges\n");
-        for (int v = 0; v < V; v++) {
-            for (int w = 0; w < V; w++) {
+        s.append(n).append(" vertices, ").append(m).append(" edges\n");
+        for (int v = 0; v < n; v++) {
+            for (int w = 0; w < n; w++) {
                 if (hasEdge(v, w)) {
                     s.append(1).append(" ");
                 } else {

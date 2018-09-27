@@ -1,5 +1,6 @@
 package com.joizhang.imooc.datastructure;
 
+import com.joizhang.imooc.algorithms.FileOperation;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ public class BSTMapTest {
         System.out.println(words.size());
 
         BSTMap<String, Integer> map = new BSTMap<>();
-        for (String word: words) {
+        for (String word : words) {
             if (map.contains(word)) {
                 map.set(word, map.get(word) + 1);
             } else {

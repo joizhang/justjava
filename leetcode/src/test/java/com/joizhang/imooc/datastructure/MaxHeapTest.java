@@ -11,7 +11,7 @@ public class MaxHeapTest {
         MaxHeap<Integer> maxHeap;
         if (isHeapify) {
             maxHeap = new MaxHeap<>(testData);
-        } else{
+        } else {
             maxHeap = new MaxHeap<>();
             for (int num : testData) {
                 maxHeap.add(num);
@@ -26,7 +26,7 @@ public class MaxHeapTest {
         }
 
         for (int i = 1; i < n; i++) {
-            if (arr[i-1] < arr[i]) {
+            if (arr[i - 1] < arr[i]) {
                 throw new IllegalArgumentException("Error");
             }
         }

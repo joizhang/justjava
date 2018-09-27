@@ -1,9 +1,9 @@
 package com.joizhang.imooc.datastructure;
 
 /**
- * @author joizhang
  * @param <K>
  * @param <V>
+ * @author joizhang
  */
 public class LinkedListMap<K, V> implements Map<K, V> {
 

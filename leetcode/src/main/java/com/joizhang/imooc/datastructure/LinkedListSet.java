@@ -1,5 +1,9 @@
 package com.joizhang.imooc.datastructure;
 
+/**
+ * @param <E>
+ * @author joizhang
+ */
 public class LinkedListSet<E> implements Set<E> {
 
     private LinkedList<E> list;

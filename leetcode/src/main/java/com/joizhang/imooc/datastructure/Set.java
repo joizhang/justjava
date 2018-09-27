@@ -1,5 +1,9 @@
 package com.joizhang.imooc.datastructure;
 
+/**
+ * @param <E>
+ * @author joizhang
+ */
 public interface Set<E> {
 
     void add(E e);

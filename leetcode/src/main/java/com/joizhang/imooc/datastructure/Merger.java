@@ -1,5 +1,9 @@
 package com.joizhang.imooc.datastructure;
 
+/**
+ * @param <E>
+ * @author joizhang
+ */
 @FunctionalInterface
 public interface Merger<E> {
 

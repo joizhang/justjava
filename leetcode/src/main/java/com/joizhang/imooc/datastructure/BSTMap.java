@@ -1,5 +1,10 @@
 package com.joizhang.imooc.datastructure;
 
+/**
+ * @param <K>
+ * @param <V>
+ * @author joizhang
+ */
 public class BSTMap<K extends Comparable<K>, V> implements Map<K, V> {
 
     private class Node {
@@ -116,7 +121,6 @@ public class BSTMap<K extends Comparable<K>, V> implements Map<K, V> {
         node.left = removeMin(node.left);
         return node;
     }
-
 
 
     @Override

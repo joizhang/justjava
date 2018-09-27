@@ -1,8 +1,8 @@
 package com.joizhang.imooc.datastructure;
 
 /**
- * @author joizhang
  * @param <E>
+ * @author joizhang
  */
 public interface Queue<E> {
 

@@ -4,6 +4,7 @@ package com.joizhang.imooc.datastructure;
  * 链表实现的队列
  *
  * @param <E>
+ * @author joizhang
  */
 public class LinkedQueue<E> implements Queue<E> {
 

@@ -69,7 +69,7 @@ public class Edge<W extends Number & Comparable> implements Comparable<Edge> {
 
     @Override
     public String toString() {
-        return "" + a + "-" + b + ": " + weight;
+        return "" + a + "-" + b + ":" + weight;
     }
 
     @Override

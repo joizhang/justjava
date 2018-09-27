@@ -96,7 +96,7 @@ public class SparseWeightedGraph<W extends Number & Comparable>
         for (int v = 0; v < n; v++) {
             s.append(v).append(": ");
             for (Edge w : g[v]) {
-                s.append(w).append(" ");
+                s.append("( to:").append(w.w()).append(",wt:").append(w.weight()).append(")\t");
             }
             s.append("\n");
         }

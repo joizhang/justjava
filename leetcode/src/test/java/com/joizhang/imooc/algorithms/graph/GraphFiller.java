@@ -9,9 +9,9 @@ import java.io.IOException;
 /**
  * @author joizhang
  */
-public class GraphFiller {
+class GraphFiller {
 
-    public GraphFiller(Graph graph, String filename) throws IOException {
+    GraphFiller(Graph graph, String filename) throws IOException {
         BufferedReader bufferedReader = FileOperation.getFileBufferedReader(filename);
 
         String line = bufferedReader.readLine();

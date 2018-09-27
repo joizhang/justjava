@@ -47,12 +47,12 @@ public class DenseWeightedGraph<W extends Number & Comparable>
 
     @Override
     public int V() {
-        return m;
+        return n;
     }
 
     @Override
     public int E() {
-        return n;
+        return m;
     }
 
     @SuppressWarnings("unchecked")
@@ -98,7 +98,7 @@ public class DenseWeightedGraph<W extends Number & Comparable>
         s.append(n).append(" vertices, ").append(m).append(" edges\n");
         for (int v = 0; v < n; v++) {
             for (int w = 0; w < n; w++) {
-                if (hasEdge(g[v][w])) {
+                if (g[v][w] != null && hasEdge(g[v][w])) {
                     s.append(g[v][w].weight()).append(" ");
                 } else {
                     s.append("null").append(" ");

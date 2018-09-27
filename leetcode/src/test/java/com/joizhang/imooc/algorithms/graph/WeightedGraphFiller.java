@@ -8,10 +8,10 @@ import com.joizhang.imooc.datastructure.WeightedGraph;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class WeightedGraphFiller {
+class WeightedGraphFiller {
 
 
-    public WeightedGraphFiller(WeightedGraph graph, String filename) throws IOException {
+    WeightedGraphFiller(WeightedGraph graph, String filename) throws IOException {
         BufferedReader bufferedReader = FileOperation.getFileBufferedReader(filename);
 
         String line = bufferedReader.readLine();

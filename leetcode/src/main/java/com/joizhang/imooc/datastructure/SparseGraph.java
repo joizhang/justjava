@@ -60,7 +60,9 @@ public class SparseGraph implements Graph {
             throw new IllegalArgumentException("Argument v and w must bigger than zero and less than vertex number.");
         }
         g[v].add(w);
-        // 不允许平行边代价会很高
+
+        // 稀疏图不允许平行边代价会很高
+
         if (v != w && !directed) {
             g[w].add(v);
         }

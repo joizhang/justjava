@@ -2,6 +2,9 @@ package com.joizhang.imooc.datastructure;
 
 import java.io.*;
 
+/**
+ * @author joizhang
+ */
 public class ReadGraph {
 
     private BufferedReader bufferedReader;

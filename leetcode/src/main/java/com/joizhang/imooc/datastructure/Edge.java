@@ -7,7 +7,7 @@ import java.util.Objects;
  *
  * @author joizhang
  */
-public class Edge<W extends Number & Comparable> implements Comparable<Edge> {
+public class Edge<W extends Number & Comparable> implements Comparable<Edge<W>> {
 
     /**
      * 边的第一个顶点

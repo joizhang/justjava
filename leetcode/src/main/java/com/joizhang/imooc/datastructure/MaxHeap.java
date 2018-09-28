@@ -16,12 +16,12 @@ public class MaxHeap<E extends Comparable<E>> {
 
     private Array<E> data;
 
-    public MaxHeap(int capacity) {
-        data = new Array<>(capacity);
-    }
-
     public MaxHeap() {
         data = new Array<>();
+    }
+
+    public MaxHeap(int capacity) {
+        data = new Array<>(capacity);
     }
 
     /**
@@ -31,17 +31,10 @@ public class MaxHeap<E extends Comparable<E>> {
      */
     public MaxHeap(E[] arr) {
         data = new Array<>(arr);
+        // 从最后一个非叶子节点开始进行 siftDown，最后一个非叶子节点为 parent(arr.length - 1)
         for (int i = parent(arr.length - 1); i >= 0; i--) {
             siftDown(i);
         }
-    }
-
-    public int size() {
-        return data.getSize();
-    }
-
-    public boolean isEmpty() {
-        return data.isEmpty();
     }
 
     private int parent(int index) {
@@ -59,10 +52,16 @@ public class MaxHeap<E extends Comparable<E>> {
         return index * 2 + 2;
     }
 
+    public int size() {
+        return data.getSize();
+    }
+
+    public boolean isEmpty() {
+        return data.isEmpty();
+    }
+
     /**
      * 添加元素
-     *
-     * @param e
      */
     public void add(E e) {
         data.addLast(e);
@@ -71,11 +70,9 @@ public class MaxHeap<E extends Comparable<E>> {
 
     /**
      * 上浮
-     *
-     * @param k
      */
     private void siftUp(int k) {
-        while (k > 0 && data.get(parent(k)).compareTo(data.get(k)) < 0) {
+        while (k > 0 && data.get(k).compareTo(data.get(parent(k))) > 0) {
             data.swap(k, parent(k));
             k = parent(k);
         }
@@ -83,20 +80,16 @@ public class MaxHeap<E extends Comparable<E>> {
 
     /**
      * 看堆中的最大元素
-     *
-     * @return
      */
     public E findMax() {
         if (data.getSize() == 0) {
-            throw new IllegalArgumentException("Cannot findMax when heap is empty!");
+            throw new IllegalArgumentException("Cannot find maximum when heap is empty!");
         }
         return data.get(0);
     }
 
     /**
      * 取出堆中的最大元素
-     *
-     * @return
      */
     public E extractMax() {
         E ret = findMax();
@@ -107,11 +100,10 @@ public class MaxHeap<E extends Comparable<E>> {
     }
 
     /**
-     * 下沉
-     *
-     * @param k
+     * 下沉，和孩子节点中最大的元素交换
      */
     private void siftDown(int k) {
+        // 终止条件为 k 节点没有孩子了
         while (leftChild(k) < data.getSize()) {
             int j = leftChild(k);
             if (j + 1 < data.getSize() && data.get(j + 1).compareTo(data.get(j)) > 0) {
@@ -127,11 +119,12 @@ public class MaxHeap<E extends Comparable<E>> {
     }
 
     /**
-     * 取出最大元素后，放入一个新元素<br>
-     * 1. 可以先extractMax，再add，两次O(logn)的操作<br>
-     * 2. 可以直接将堆顶元素替换以后sift down，一次O(logn)的操作
+     * 取出最大元素后，放入一个新元素<p>
      *
-     * @param e
+     * <ul>
+     * <li>可以先extractMax，再add，两次O(logn)的操作</li>
+     * <li>可以直接将堆顶元素替换以后sift down，一次O(logn)的操作</li>
+     * </ul>
      */
     public E replace(E e) {
         E ret = findMax();

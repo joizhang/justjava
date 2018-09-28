@@ -1,8 +1,13 @@
 package com.joizhang.imooc.datastructure;
 
+import com.joizhang.imooc.algorithms.sort.Sorts;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+
+import static org.junit.Assert.assertTrue;
 
 public class MaxHeapTest {
 
@@ -40,7 +45,6 @@ public class MaxHeapTest {
     @Test
     public void add() {
         int n = 1000000;
-        MaxHeap<Integer> maxHeap = new MaxHeap<>();
         Random random = new Random();
         Integer[] testData = new Integer[n];
         for (int i = 0; i < n; i++) {
@@ -52,6 +56,24 @@ public class MaxHeapTest {
 
         double time2 = testHeap(testData, true);
         System.out.println("With heapify: " + time2 + "s");
+    }
+
+    @Test
+    public void extractMax() {
+        int n = 1000;
+        Random random = new Random();
+        Integer[] testData = new Integer[n];
+        for (int i = 0; i < n; i++) {
+            testData[i] = random.nextInt(Integer.MAX_VALUE);
+        }
+        MaxHeap<Integer> heap = new MaxHeap<>(testData);
+        List<Integer> list = new ArrayList<>(n);
+        while (!heap.isEmpty()) {
+            list.add(heap.extractMax());
+        }
+        testData = new Integer[n];
+        list.toArray(testData);
+        assertTrue(Sorts.isDescSorted(testData));
     }
 
 }

@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * @author joizhang
  */
-class Sorts {
+public class Sorts {
 
     private static final Random RANDOM = new Random(47);
 
@@ -56,9 +56,18 @@ class Sorts {
         System.out.println();
     }
 
-    static boolean isSorted(Comparable[] a) {
+    public static boolean isSorted(Comparable[] a) {
         for (int i = 1; i < a.length; i++) {
             if (less(a[i], a[i - 1])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean isDescSorted(Comparable[] a) {
+        for (int i = 1; i < a.length; i++) {
+            if (less(a[i-1], a[i])) {
                 return false;
             }
         }

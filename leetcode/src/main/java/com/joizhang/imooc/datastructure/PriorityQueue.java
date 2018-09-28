@@ -1,7 +1,7 @@
 package com.joizhang.imooc.datastructure;
 
 /**
- * 基于堆实现的优先队列
+ * 基于最大堆实现的优先队列
  *
  * @param <E>
  * @author joizhang

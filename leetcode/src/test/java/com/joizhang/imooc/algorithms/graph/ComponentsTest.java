@@ -30,7 +30,7 @@ public class ComponentsTest {
     @Test
     public void testG1() throws IOException {
         Graph graph = new SparseGraph(13, false);
-        new GraphFiller(graph, "testG1.txt");
+        new GraphFiller(graph, "graph/testG1.txt");
         Components components = new Components(graph);
         assertTrue(components.isConnected(0, 5));
         assertEquals(3, components.count());
@@ -49,7 +49,7 @@ public class ComponentsTest {
     @Test
     public void testG2() throws IOException {
         Graph graph = new SparseGraph(7, false);
-        new GraphFiller(graph, "testG2.txt");
+        new GraphFiller(graph, "graph/testG2.txt");
         Components components = new Components(graph);
         assertTrue(components.isConnected(0, 5));
         assertEquals(1, components.count());

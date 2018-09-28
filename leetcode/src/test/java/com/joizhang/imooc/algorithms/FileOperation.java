@@ -15,7 +15,7 @@ public class FileOperation {
         assert filename != null;
         File file = new File(filename);
         if (!file.exists()) {
-            throw new IllegalArgumentException(filename + "doesn't exist.");
+            throw new IllegalArgumentException(filename + " doesn't exist.");
         }
         return new BufferedReader(new FileReader(file));
     }

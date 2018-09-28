@@ -1,9 +1,13 @@
 package com.joizhang.diveintojvm;
 
+
 import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
 
+/**
+ * @author joizhang
+ */
 public class UnsafeHelper {
 
     private static final Unsafe unsafe = createUnsafe();

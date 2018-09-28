@@ -14,7 +14,7 @@ public class ShortestPathTest {
     @Test
     public void test() throws IOException {
         Graph graph = new SparseGraph(7, false);
-        new GraphFiller(graph, "testG2.txt");
+        new GraphFiller(graph, "graph/testG2.txt");
         ShortestPath shortestPath = new ShortestPath(graph, 0);
 
         assertTrue(shortestPath.hasPath(6));

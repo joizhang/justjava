@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
 
+/**
+ * @author joizhang
+ */
 public class FutureTaskSample {
 
     public static void main(String[] args) {

@@ -12,7 +12,7 @@ package com.joizhang.imooc.datastructure;
  * @param <E>
  * @author joizhang
  */
-public class MaxHeap<E extends Comparable<E>> {
+public class MaxHeap<E extends Comparable> {
 
     private Array<E> data;
 

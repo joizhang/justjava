@@ -6,7 +6,7 @@ package com.joizhang.imooc.datastructure;
  * @param <E>
  * @author joizhang
  */
-public class MinHeap<E extends Comparable<E>> {
+public class MinHeap<E extends Comparable> {
 
     private Array<E> data;
 

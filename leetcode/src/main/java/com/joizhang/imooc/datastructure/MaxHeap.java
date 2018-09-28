@@ -31,9 +31,9 @@ public class MaxHeap<E extends Comparable<E>> {
      */
     public MaxHeap(E[] arr) {
         data = new Array<>(arr);
-        // 从最后一个非叶子节点开始进行 siftDown，最后一个非叶子节点为 parent(arr.length - 1)
+        // 从最后一个非叶子节点开始进行 shiftDown，最后一个非叶子节点为 parent(arr.length - 1)
         for (int i = parent(arr.length - 1); i >= 0; i--) {
-            siftDown(i);
+            shiftDown(i);
         }
     }
 
@@ -65,13 +65,13 @@ public class MaxHeap<E extends Comparable<E>> {
      */
     public void add(E e) {
         data.addLast(e);
-        siftUp(data.getSize() - 1);
+        shiftUp(data.getSize() - 1);
     }
 
     /**
      * 上浮
      */
-    private void siftUp(int k) {
+    private void shiftUp(int k) {
         while (k > 0 && data.get(k).compareTo(data.get(parent(k))) > 0) {
             data.swap(k, parent(k));
             k = parent(k);
@@ -95,14 +95,14 @@ public class MaxHeap<E extends Comparable<E>> {
         E ret = findMax();
         data.swap(0, data.getSize() - 1);
         data.removeLast();
-        siftDown(0);
+        shiftDown(0);
         return ret;
     }
 
     /**
      * 下沉，和孩子节点中最大的元素交换
      */
-    private void siftDown(int k) {
+    private void shiftDown(int k) {
         // 终止条件为 k 节点没有孩子了
         while (leftChild(k) < data.getSize()) {
             int j = leftChild(k);
@@ -129,7 +129,7 @@ public class MaxHeap<E extends Comparable<E>> {
     public E replace(E e) {
         E ret = findMax();
         data.set(0, e);
-        siftDown(0);
+        shiftDown(0);
         return ret;
     }
 

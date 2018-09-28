@@ -42,7 +42,8 @@ public class Merge {
             aux[i - l] = a[i];
         }
 
-        int i = l, j = mid + 1;
+        int i = l;
+        int j = mid + 1;
         for (int k = l; k <= r; k++) {
             if (i > mid) {
                 a[k] = aux[j - l];

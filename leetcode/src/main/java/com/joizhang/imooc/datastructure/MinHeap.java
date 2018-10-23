@@ -6,7 +6,7 @@ package com.joizhang.imooc.datastructure;
  * @param <E>
  * @author joizhang
  */
-public class MinHeap<E extends Comparable<E>> {
+public class MinHeap<E extends Comparable<E>> implements Heap<E> {
 
     private Array<E> data;
 
@@ -51,6 +51,7 @@ public class MinHeap<E extends Comparable<E>> {
     /**
      * 添加元素
      */
+    @Override
     public void add(E e) {
         data.addLast(e);
         shiftUp(data.getSize() - 1);
@@ -69,7 +70,8 @@ public class MinHeap<E extends Comparable<E>> {
     /**
      * 看堆中的最小元素
      */
-    public E findMin() {
+    @Override
+    public E getElement() {
         if (data.getSize() == 0) {
             throw new IllegalArgumentException("Cannot find minimum when heap is empty!");
         }
@@ -79,8 +81,9 @@ public class MinHeap<E extends Comparable<E>> {
     /**
      * 取出堆中的最小元素
      */
-    public E extractMin() {
-        E ret = findMin();
+    @Override
+    public E extractElement() {
+        E ret = getElement();
         data.swap(0, data.getSize() - 1);
         data.removeLast();
         shiftDown(0);

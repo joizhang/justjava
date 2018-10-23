@@ -9,10 +9,9 @@ package com.joizhang.imooc.datastructure;
  * d) 使用索引0：parent(i) = (i - 1) / 2; left child(i) = 2 * i + 1; right child(i) = 2 * i + 2
  * <pre/>
  *
- * @param <E>
  * @author joizhang
  */
-public class MaxHeap<E extends Comparable<E>> {
+public class MaxHeap<E extends Comparable<E>> implements Heap<E> {
 
     private Array<E> data;
 
@@ -63,6 +62,7 @@ public class MaxHeap<E extends Comparable<E>> {
     /**
      * 添加元素
      */
+    @Override
     public void add(E e) {
         data.addLast(e);
         shiftUp(data.getSize() - 1);
@@ -81,7 +81,8 @@ public class MaxHeap<E extends Comparable<E>> {
     /**
      * 看堆中的最大元素
      */
-    public E findMax() {
+    @Override
+    public E getElement() {
         if (data.getSize() == 0) {
             throw new IllegalArgumentException("Cannot find maximum when heap is empty!");
         }
@@ -91,8 +92,9 @@ public class MaxHeap<E extends Comparable<E>> {
     /**
      * 取出堆中的最大元素
      */
-    public E extractMax() {
-        E ret = findMax();
+    @Override
+    public E extractElement() {
+        E ret = getElement();
         data.swap(0, data.getSize() - 1);
         data.removeLast();
         shiftDown(0);
@@ -127,7 +129,7 @@ public class MaxHeap<E extends Comparable<E>> {
      * </ul>
      */
     public E replace(E e) {
-        E ret = findMax();
+        E ret = getElement();
         data.set(0, e);
         shiftDown(0);
         return ret;

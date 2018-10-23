@@ -46,7 +46,7 @@ public class LazyPrimMinSpanningTree<W extends Number & Comparable> {
         visit(0);
         while (!minHeap.isEmpty()) {
             // 使用最小堆找出已经访问的边中权值最小的边
-            Edge<W> e = minHeap.extractMin();
+            Edge<W> e = minHeap.getElement();
             // 如果这条边的两端都已经访问过了, 则扔掉这条边
             if (marked[e.v()] == marked[e.w()]) {
                 continue;

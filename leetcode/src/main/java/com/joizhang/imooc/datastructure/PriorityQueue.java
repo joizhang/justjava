@@ -31,12 +31,12 @@ public class PriorityQueue<E extends Comparable<E>> implements Queue<E> {
 
     @Override
     public E dequeue() {
-        return maxHeap.extractMax();
+        return maxHeap.extractElement();
     }
 
     @Override
     public E getFront() {
-        return maxHeap.findMax();
+        return maxHeap.getElement();
     }
 
 }

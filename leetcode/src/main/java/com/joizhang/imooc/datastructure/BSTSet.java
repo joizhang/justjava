@@ -1,6 +1,8 @@
 package com.joizhang.imooc.datastructure;
 
 /**
+ * 基于二分搜索树的集合
+ *
  * @param <E>
  * @author joizhang
  */

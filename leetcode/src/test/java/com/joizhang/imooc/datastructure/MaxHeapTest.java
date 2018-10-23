@@ -27,7 +27,7 @@ public class MaxHeapTest {
         int[] arr = new int[n];
 
         for (int i = 0; i < n; i++) {
-            arr[i] = maxHeap.extractMax();
+            arr[i] = maxHeap.extractElement();
         }
 
         for (int i = 1; i < n; i++) {
@@ -69,7 +69,7 @@ public class MaxHeapTest {
         MaxHeap<Integer> heap = new MaxHeap<>(testData);
         List<Integer> list = new ArrayList<>(n);
         while (!heap.isEmpty()) {
-            list.add(heap.extractMax());
+            list.add(heap.extractElement());
         }
         testData = new Integer[n];
         list.toArray(testData);

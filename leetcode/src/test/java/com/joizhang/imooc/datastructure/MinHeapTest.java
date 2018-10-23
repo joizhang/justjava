@@ -22,7 +22,7 @@ public class MinHeapTest {
         MinHeap<Integer> heap = new MinHeap<>(testData);
         List<Integer> list = new ArrayList<>(n);
         while (!heap.isEmpty()) {
-            list.add(heap.extractMin());
+            list.add(heap.extractElement());
         }
         testData = new Integer[n];
         list.toArray(testData);

@@ -9,7 +9,7 @@ class InsertionSortList {
 
     public ListNode insertionSortList(ListNode head) {
         if (head == null) {
-            return head;
+            return null;
         }
         ListNode helper = new ListNode(0);
         ListNode pre = helper;

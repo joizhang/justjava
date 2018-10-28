@@ -1,8 +1,5 @@
 package com.joizhang.imooc.datastructure;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * 带权稀疏图 - 邻接表
  *
@@ -30,7 +27,7 @@ public class SparseWeightedGraph<W extends Number & Comparable>
     /**
      * 图的具体数据
      */
-    private List<Edge<W>>[] g;
+    private Array<Edge<W>>[] g;
 
     @SuppressWarnings("unchecked")
     public SparseWeightedGraph(int n, boolean directed) {
@@ -40,9 +37,9 @@ public class SparseWeightedGraph<W extends Number & Comparable>
         this.n = n;
         this.m = 0;
         this.directed = directed;
-        this.g = new List[n];
+        this.g = new Array[n];
         for (int i = 0; i < n; i++) {
-            g[i] = new ArrayList<>();
+            g[i] = new Array<>();
         }
     }
 
@@ -63,9 +60,9 @@ public class SparseWeightedGraph<W extends Number & Comparable>
         if (!valid) {
             throw new IllegalArgumentException("Argument v and w must bigger than zero and less than vertex number.");
         }
-        g[e.v()].add(new Edge(e));
+        g[e.v()].addLast(new Edge(e));
         if (e.v() != e.w() && !directed) {
-            g[e.w()].add(new Edge(e.w(), e.v(), e.weight()));
+            g[e.w()].addLast(new Edge(e.w(), e.v(), e.weight()));
         }
         m++;
     }
@@ -76,7 +73,7 @@ public class SparseWeightedGraph<W extends Number & Comparable>
         if (!valid) {
             throw new IllegalArgumentException("Argument v and w must bigger than zero and less than vertex number.");
         }
-        for (int i = 0; i < g[e.v()].size(); i++) {
+        for (int i = 0; i < g[e.v()].getSize(); i++) {
             if (g[e.v()].get(i).equals(e)) {
                 return true;
             }

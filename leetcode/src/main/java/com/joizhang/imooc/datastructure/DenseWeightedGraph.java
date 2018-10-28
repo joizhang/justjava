@@ -1,8 +1,5 @@
 package com.joizhang.imooc.datastructure;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @author joizhang
  */
@@ -83,10 +80,10 @@ public class DenseWeightedGraph<W extends Number & Comparable>
 
     @Override
     public Iterable<Edge> adj(int v) {
-        List<Edge> edges = new ArrayList<>();
+        Array<Edge> edges = new Array<>();
         for (int i = 0; i < g[v].length; i++) {
             if (g[v][i] != null) {
-                edges.add(g[v][i]);
+                edges.addLast(g[v][i]);
             }
         }
         return edges;

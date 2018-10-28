@@ -1,12 +1,15 @@
 package com.joizhang.imooc.datastructure;
 
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 /**
  * 动态数组
  *
  * @param <E>
  * @author joizhang
  */
-public class Array<E> {
+public class Array<E> implements Iterable<E> {
 
 
     private E[] data;
@@ -220,4 +223,29 @@ public class Array<E> {
         data = newData;
     }
 
+    @SuppressWarnings("unchecked")
+    @Override
+    public Iterator iterator() {
+        return new Iterator() {
+            private int index = 0;
+
+            @Override
+            public boolean hasNext() {
+                return index < size;
+            }
+
+            @Override
+            public Object next() {
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+                return data[index++];
+            }
+
+            @Override
+            public void remove() {
+                throw new UnsupportedOperationException();
+            }
+        };
+    }
 }

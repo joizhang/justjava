@@ -65,7 +65,7 @@ public class LinkedList<E> {
 
     public E get(int index) {
         if (index < 0 || index > size) {
-            throw new IllegalArgumentException("Add failed. Illegal index.");
+            throw new IllegalArgumentException("Get failed. Illegal index.");
         }
         Node cur = dummyHead.next;
         for (int i = 0; i < index; i++) {
@@ -76,7 +76,7 @@ public class LinkedList<E> {
 
     public void set(int index, E e) {
         if (index < 0 || index > size) {
-            throw new IllegalArgumentException("Add failed. Illegal index.");
+            throw new IllegalArgumentException("Set failed. Illegal index.");
         }
         Node cur = dummyHead.next;
         for (int i = 0; i < index; i++) {
@@ -98,7 +98,7 @@ public class LinkedList<E> {
 
     public E remove(int index) {
         if (index < 0 || index > size) {
-            throw new IllegalArgumentException("Add failed. Illegal index.");
+            throw new IllegalArgumentException("Remove failed. Illegal index.");
         }
         Node prev = dummyHead;
         for (int i = 0; i < index; i++) {

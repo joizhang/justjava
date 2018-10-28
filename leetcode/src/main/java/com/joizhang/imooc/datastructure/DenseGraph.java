@@ -1,8 +1,5 @@
 package com.joizhang.imooc.datastructure;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * 稠密图 - 邻接矩阵
  *
@@ -77,10 +74,10 @@ public class DenseGraph implements Graph {
 
     @Override
     public Iterable<Integer> adj(int v) {
-        List<Integer> adj = new ArrayList<>();
+        Array<Integer> adj = new Array<>();
         for (int i = 0; i < n; i++) {
             if (g[v][i]) {
-                adj.add(i);
+                adj.addLast(i);
             }
         }
         return adj;

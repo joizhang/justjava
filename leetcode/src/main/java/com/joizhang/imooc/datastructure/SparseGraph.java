@@ -1,8 +1,5 @@
 package com.joizhang.imooc.datastructure;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * 稀疏图 - 邻接表
  *
@@ -28,7 +25,7 @@ public class SparseGraph implements Graph {
     /**
      * 图的具体数据
      */
-    private List<Integer>[] g;
+    private Array<Integer>[] g;
 
     @SuppressWarnings("unchecked")
     public SparseGraph(int n, boolean directed) {
@@ -38,9 +35,9 @@ public class SparseGraph implements Graph {
         this.n = n;
         this.m = 0;
         this.directed = directed;
-        g = new List[n];
+        g = new Array[n];
         for (int i = 0; i < n; i++) {
-            g[i] = new ArrayList<>();
+            g[i] = new Array<>();
         }
     }
 
@@ -60,12 +57,12 @@ public class SparseGraph implements Graph {
         if (!valid) {
             throw new IllegalArgumentException("Argument v and w must bigger than zero and less than vertex number.");
         }
-        g[v].add(w);
+        g[v].addLast(w);
 
         // 稀疏图不允许平行边代价会很高
 
         if (v != w && !directed) {
-            g[w].add(v);
+            g[w].addLast(v);
         }
         m++;
     }

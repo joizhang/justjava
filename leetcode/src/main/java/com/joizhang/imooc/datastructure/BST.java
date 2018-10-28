@@ -1,7 +1,5 @@
 package com.joizhang.imooc.datastructure;
 
-import java.util.Stack;
-
 /**
  * <strong>二分搜索树</strong>
  *
@@ -103,16 +101,16 @@ public class BST<E extends Comparable<E>> {
      * 前序遍历非递归
      */
     public void preOrderNR() {
-        Stack<Node> stack = new Stack<>();
-        stack.push(root);
+        Array<Node> stack = new Array<>();
+        stack.addLast(root);
         while (!stack.isEmpty()) {
-            Node cur = stack.pop();
+            Node cur = stack.removeLast();
             System.out.println(cur.e);
             if (cur.right != null) {
-                stack.push(cur.right);
+                stack.addLast(cur.right);
             }
             if (cur.left != null) {
-                stack.push(cur.left);
+                stack.addLast(cur.left);
             }
         }
     }
@@ -128,7 +126,6 @@ public class BST<E extends Comparable<E>> {
         if (node == null) {
             return;
         }
-
         inOrder(node.left);
         System.out.println(node.e);
         inOrder(node.right);
@@ -152,7 +149,6 @@ public class BST<E extends Comparable<E>> {
         if (node == null) {
             return;
         }
-
         postOrder(node.left);
         postOrder(node.right);
         System.out.println(node.e);

@@ -60,21 +60,16 @@ public class Array<E> {
      * 在index索引的位置插入一个新元素e
      */
     public void add(int index, E e) {
-
         if (index < 0 || index > size) {
             throw new IllegalArgumentException("Add failed. Require index >= 0 and index <= size.");
         }
-
         if (size == data.length) {
             resize(2 * data.length);
         }
-
         for (int i = size - 1; i >= index; i--) {
             data[i + 1] = data[i];
         }
-
         data[index] = e;
-
         size++;
     }
 
@@ -201,7 +196,7 @@ public class Array<E> {
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
-        res.append(String.format("Array: size = %d , capacity = %d\n", size, data.length));
+        res.append("Array: size = ").append(size).append(", capacity = ").append(data.length).append("\n");
         res.append('[');
         for (int i = 0; i < size; i++) {
             res.append(data[i]);

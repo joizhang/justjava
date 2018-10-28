@@ -3,7 +3,7 @@ package com.joizhang.imooc.datastructure;
 import java.util.Stack;
 
 /**
- * 二分搜索树
+ * <strong>二分搜索树</strong>
  *
  * @param <E>
  * @author joizhang
@@ -13,7 +13,9 @@ public class BST<E extends Comparable<E>> {
     private class Node {
         E e;
 
-        Node left, right;
+        Node left;
+
+        Node right;
 
         Node(E e) {
             this.e = e;

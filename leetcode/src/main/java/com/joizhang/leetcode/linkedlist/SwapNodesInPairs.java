@@ -22,4 +22,17 @@ class SwapNodesInPairs {
         return dummy.next;
     }
 
+    /**
+     * recursive
+     */
+    public ListNode swapPairs2(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode n = head.next;
+        head.next = swapPairs2(head.next.next);
+        n.next = head;
+        return n;
+    }
+
 }

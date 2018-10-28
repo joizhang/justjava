@@ -27,4 +27,12 @@ public class SwapNodesInPairsTest {
         ListNode head6 = new ListNode(new int[]{1, 2, 3, 4, 5});
         System.out.println(swapNodesInPairs.swapPairs(head6));
     }
+
+    @Test
+    public void swapPairs2() {
+        SwapNodesInPairs swapNodesInPairs = new SwapNodesInPairs();
+        ListNode head6 = new ListNode(new int[]{1, 2, 3, 4, 5});
+        System.out.println(swapNodesInPairs.swapPairs2(head6));
+    }
+
 }

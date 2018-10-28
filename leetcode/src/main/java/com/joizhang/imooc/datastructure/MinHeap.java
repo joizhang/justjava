@@ -83,9 +83,7 @@ public class MinHeap<E extends Comparable<E>> implements Heap<E> {
      */
     @Override
     public E extractElement() {
-        E ret = getElement();
-        data.swap(0, data.getSize() - 1);
-        data.removeLast();
+        E ret = extractElement(data);
         shiftDown(0);
         return ret;
     }

@@ -24,12 +24,12 @@ public abstract class AbstractTraversal {
     /**
      * 记录 dfs 的过程中节点是否被访问
      */
-    protected boolean[] visited;
+    boolean[] visited;
 
     /**
      * 记录路径, from[i] 表示查找的路径上 i 的上一个节点
      */
-    protected int[] from;
+    int[] from;
 
     AbstractTraversal(Graph graph, int s) {
         this.graph = graph;

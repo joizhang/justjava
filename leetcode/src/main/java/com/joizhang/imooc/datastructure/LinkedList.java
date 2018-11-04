@@ -10,6 +10,7 @@ public class LinkedList<E> {
 
     private class Node {
         E e;
+
         Node next;
 
         Node(E e, Node next) {
@@ -133,16 +134,10 @@ public class LinkedList<E> {
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
-//        Node cur = dummyHead.next;
-//        while(cur != null){
-//            res.append(cur).append("->");
-//            cur = cur.next;
-//        }
         for (Node cur = dummyHead.next; cur != null; cur = cur.next) {
             res.append(cur).append("->");
         }
         res.append("NULL");
-
         return res.toString();
     }
 }

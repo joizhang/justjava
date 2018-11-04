@@ -7,6 +7,10 @@ package com.joizhang.imooc.datastructure;
  */
 public interface Map<K, V> {
 
+    int getSize();
+
+    boolean isEmpty();
+
     void add(K key, V value);
 
     V remove(K key);
@@ -16,9 +20,5 @@ public interface Map<K, V> {
     V get(K key);
 
     void set(K key, V value);
-
-    int getSize();
-
-    boolean isEmpty();
 
 }

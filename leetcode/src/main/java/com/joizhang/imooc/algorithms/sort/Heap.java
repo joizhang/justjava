@@ -14,7 +14,7 @@ public class Heap {
             return;
         }
         int n = a.length;
-        // heapify，从最后一个非叶子节点开始，形成一个最小堆
+        // Heapify，从最后一个非叶子节点开始，形成一个最小堆
         for (int i = parent(n - 1); i >= 0; i--) {
             shiftDown(a, n, i);
         }

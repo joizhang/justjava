@@ -105,11 +105,11 @@ public class MaxHeap<E extends Comparable<E>> implements Heap<E> {
     private void shiftDown(int k) {
         // 终止条件为 k 节点没有孩子了
         while (leftChild(k) < data.getSize()) {
+            // data[j] 是 leftChild 和 rightChild 中的最大值
             int j = leftChild(k);
             if (j + 1 < data.getSize() && data.get(j + 1).compareTo(data.get(j)) > 0) {
                 j = rightChild(k);
             }
-            // data[j] 是 leftChild 和 rightChild 中的最大值
             if (data.get(k).compareTo(data.get(j)) >= 0) {
                 break;
             }

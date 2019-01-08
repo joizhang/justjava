@@ -1,6 +1,8 @@
 package com.joizhang.imooc.datastructure;
 
 /**
+ * 映射接口
+ *
  * @param <K>
  * @param <V>
  * @author joizhang

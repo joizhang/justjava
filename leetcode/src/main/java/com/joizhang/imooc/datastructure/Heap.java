@@ -1,7 +1,7 @@
 package com.joizhang.imooc.datastructure;
 
 /**
- * 堆的接口
+ * 堆接口
  *
  * @author joizhang
  */

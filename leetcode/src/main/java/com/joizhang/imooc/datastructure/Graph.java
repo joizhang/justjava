@@ -1,6 +1,8 @@
 package com.joizhang.imooc.datastructure;
 
 /**
+ * 图接口
+ *
  * @author joizhang
  */
 public interface Graph {

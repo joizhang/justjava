@@ -85,8 +85,6 @@ public class Array<E> implements Iterable<E> {
 
     /**
      * 在所有元素前添加一个新元素
-     *
-     * @param e
      */
     public void addFirst(E e) {
         add(0, e);
@@ -100,6 +98,10 @@ public class Array<E> implements Iterable<E> {
             throw new IllegalArgumentException("Get failed. Index is illegal.");
         }
         return data[index];
+    }
+
+    public E getLast() {
+        return get(getSize() - 1);
     }
 
     /**
@@ -174,8 +176,6 @@ public class Array<E> implements Iterable<E> {
 
     /**
      * 从数组中删除元素e
-     *
-     * @param e
      */
     public void removeElement(E e) {
         int index = find(e);

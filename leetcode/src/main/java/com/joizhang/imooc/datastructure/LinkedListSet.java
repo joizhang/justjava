@@ -8,7 +8,7 @@ public class LinkedListSet<E> implements Set<E> {
 
     private LinkedList<E> list;
 
-    LinkedListSet() {
+    public LinkedListSet() {
         list = new LinkedList<>();
     }
 

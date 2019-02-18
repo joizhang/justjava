@@ -1,6 +1,8 @@
 package com.joizhang.imooc.datastructure;
 
 /**
+ * 带权图的接口
+ *
  * @author joizhang
  */
 public interface WeightedGraph<W extends Number & Comparable> {

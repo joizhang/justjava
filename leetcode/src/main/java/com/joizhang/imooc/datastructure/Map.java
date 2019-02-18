@@ -1,11 +1,17 @@
 package com.joizhang.imooc.datastructure;
 
 /**
+ * 映射接口
+ *
  * @param <K>
  * @param <V>
  * @author joizhang
  */
 public interface Map<K, V> {
+
+    int getSize();
+
+    boolean isEmpty();
 
     void add(K key, V value);
 
@@ -16,9 +22,5 @@ public interface Map<K, V> {
     V get(K key);
 
     void set(K key, V value);
-
-    int getSize();
-
-    boolean isEmpty();
 
 }

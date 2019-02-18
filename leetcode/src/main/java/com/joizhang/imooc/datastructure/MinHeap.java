@@ -1,5 +1,7 @@
 package com.joizhang.imooc.datastructure;
 
+import com.joizhang.imooc.algorithms.sort.Sorts;
+
 /**
  * 最小堆
  *
@@ -93,11 +95,12 @@ public class MinHeap<E extends Comparable<E>> implements Heap<E> {
      */
     private void shiftDown(int k) {
         while (leftChild(k) < data.getSize()) {
+            // data[j] 是 leftChild 和 rightChild 中的最大值
             int j = leftChild(k);
-            if (j + 1 < data.getSize() && data.get(j + 1).compareTo(data.get(j)) < 0) {
+            if (j + 1 < data.getSize() && Sorts.less(data.get(j + 1), data.get(j))) {
                 j = rightChild(k);
             }
-            // data[j] 是 leftChild 和 rightChild 中的最大值
+            // k 的值小于孩子的值的时候就停止
             if (data.get(k).compareTo(data.get(j)) <= 0) {
                 break;
             }

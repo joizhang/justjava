@@ -8,12 +8,10 @@
     <modules>
         <module>imooc-learning</module>
         <module>seckill-imooc</module>
-        <module>json-comparison</module>
         <module>spring-java-config</module>
         <module>advanced-java</module>
         <module>guice-imooc</module>
         <module>leetcode</module>
-        <module>deeplearning</module>
     </modules>
     <packaging>pom</packaging>
 

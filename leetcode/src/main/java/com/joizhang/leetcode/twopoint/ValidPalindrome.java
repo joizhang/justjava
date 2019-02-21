@@ -1,5 +1,10 @@
 package com.joizhang.leetcode.twopoint;
 
+/**
+ * 125. Valid Palindrome
+ *
+ * @author joizhang
+ */
 class ValidPalindrome {
 
     public boolean isPalindrome(String s) {

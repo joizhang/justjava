@@ -90,8 +90,7 @@ public class BST<E extends Comparable<E>> {
         if (node == null) {
             return;
         }
-
-        System.out.println(node.e);
+        System.out.print(node.e + " ");
         preOrder(node.left);
         preOrder(node.right);
     }
@@ -100,16 +99,16 @@ public class BST<E extends Comparable<E>> {
      * 前序遍历非递归
      */
     public void preOrderNR() {
-        Array<Node> stack = new Array<>();
-        stack.addLast(root);
+        Stack<Node> stack = new ArrayStack<>();
+        stack.push(root);
         while (!stack.isEmpty()) {
-            Node cur = stack.removeLast();
-            System.out.println(cur.e);
+            Node cur = stack.pop();
+            System.out.print(cur.e + " ");
             if (cur.right != null) {
-                stack.addLast(cur.right);
+                stack.push(cur.right);
             }
             if (cur.left != null) {
-                stack.addLast(cur.left);
+                stack.push(cur.left);
             }
         }
     }
@@ -126,7 +125,7 @@ public class BST<E extends Comparable<E>> {
             return;
         }
         inOrder(node.left);
-        System.out.println(node.e);
+        System.out.print(node.e + " ");
         inOrder(node.right);
     }
 
@@ -150,7 +149,7 @@ public class BST<E extends Comparable<E>> {
         }
         postOrder(node.left);
         postOrder(node.right);
-        System.out.println(node.e);
+        System.out.print(node.e + " ");
     }
 
     /**
@@ -168,7 +167,7 @@ public class BST<E extends Comparable<E>> {
         queue.enqueue(root);
         while (!queue.isEmpty()) {
             Node cur = queue.dequeue();
-            System.out.println(cur.e);
+            System.out.print(cur.e + " ");
             if (cur.left != null) {
                 queue.enqueue(cur.left);
             }

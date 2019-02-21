@@ -21,19 +21,24 @@ public class BSTTest {
     }
 
     @Test
-    public void testBST() {
-        bst.preOrder();
-        System.out.println();
-        bst.inOrder();
-        System.out.println();
-        bst.postOrder();
-    }
-
-    @Test
     public void testPreOrder() {
         bst.preOrder();
         System.out.println();
         bst.preOrderNR();
+    }
+
+    @Test
+    public void testInOrder() {
+        bst.inOrder();
+        System.out.println();
+        bst.inOrderNR();
+    }
+
+    @Test
+    public void testPostOrder() {
+        bst.postOrder();
+        System.out.println();
+        bst.postOrderNR();
     }
 
     @Test

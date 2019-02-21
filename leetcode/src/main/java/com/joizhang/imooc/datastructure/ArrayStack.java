@@ -2,11 +2,17 @@ package com.joizhang.imooc.datastructure;
 
 /**
  * 用 @{@link Array} 实现的栈
+ *
  * @param <E>
+ * @author joizhang
  */
 public class ArrayStack<E> implements Stack<E> {
 
     private Array<E> array;
+
+    public ArrayStack() {
+        array = new Array<>();
+    }
 
     public ArrayStack(int capacity) {
         array = new Array<>(capacity);
@@ -19,7 +25,7 @@ public class ArrayStack<E> implements Stack<E> {
 
     @Override
     public E pop() {
-        return array.removeFirst();
+        return array.removeLast();
     }
 
     @Override

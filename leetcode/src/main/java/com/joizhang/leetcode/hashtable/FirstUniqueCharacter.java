@@ -5,7 +5,7 @@ package com.joizhang.leetcode.hashtable;
  *
  * @author joizhang
  */
-class FirstUniqueCharacterInAString {
+class FirstUniqueCharacter {
 
     public int firstUniqChar(String s) {
         int[] freq = new int[26];

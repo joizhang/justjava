@@ -8,7 +8,7 @@ import java.util.Map;
  *
  * @author joizhang
  */
-public class TwoSum {
+class TwoSum {
 
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();

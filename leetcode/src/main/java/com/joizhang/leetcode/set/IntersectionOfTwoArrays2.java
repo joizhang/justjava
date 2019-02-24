@@ -3,6 +3,11 @@ package com.joizhang.leetcode.set;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * 350. Intersection of Two Arrays II
+ *
+ * @author joizhang
+ */
 class IntersectionOfTwoArrays2 {
 
     public int[] intersect(int[] nums1, int[] nums2) {

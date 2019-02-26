@@ -11,15 +11,15 @@ class ReverseLinkedList {
      * iteratively
      */
     public ListNode reverseList(ListNode head) {
+        ListNode pre = null;
         ListNode cur = head;
-        ListNode prev = null;
         while (cur != null) {
             ListNode next = cur.next;
-            cur.next = prev;
-            prev = cur;
+            cur.next = pre;
+            pre = cur;
             cur = next;
         }
-        return prev;
+        return pre;
     }
 
     /**

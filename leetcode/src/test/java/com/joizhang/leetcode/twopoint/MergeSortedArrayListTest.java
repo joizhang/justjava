@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class MergeSortedArrayTest {
+public class MergeSortedArrayListTest {
 
     @Test
     public void merge() {

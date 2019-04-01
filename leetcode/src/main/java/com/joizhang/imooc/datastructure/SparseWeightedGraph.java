@@ -27,7 +27,7 @@ public class SparseWeightedGraph<W extends Number & Comparable>
     /**
      * 图的具体数据
      */
-    private Array<Edge<W>>[] g;
+    private ArrayList<Edge<W>>[] g;
 
     @SuppressWarnings("unchecked")
     public SparseWeightedGraph(int n, boolean directed) {
@@ -37,9 +37,9 @@ public class SparseWeightedGraph<W extends Number & Comparable>
         this.n = n;
         this.m = 0;
         this.directed = directed;
-        this.g = new Array[n];
+        this.g = new ArrayList[n];
         for (int i = 0; i < n; i++) {
-            g[i] = new Array<>();
+            g[i] = new ArrayList<>();
         }
     }
 

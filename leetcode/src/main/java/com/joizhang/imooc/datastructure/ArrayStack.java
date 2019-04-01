@@ -1,46 +1,46 @@
 package com.joizhang.imooc.datastructure;
 
 /**
- * 用 @{@link Array} 实现的栈
+ * 用 @{@link ArrayList} 实现的栈
  *
  * @param <E>
  * @author joizhang
  */
 public class ArrayStack<E> implements Stack<E> {
 
-    private Array<E> array;
+    private ArrayList<E> arrayList;
 
     public ArrayStack() {
-        array = new Array<>();
+        arrayList = new ArrayList<>();
     }
 
     public ArrayStack(int capacity) {
-        array = new Array<>(capacity);
+        arrayList = new ArrayList<>(capacity);
     }
 
     @Override
     public void push(E e) {
-        array.addLast(e);
+        arrayList.addLast(e);
     }
 
     @Override
     public E pop() {
-        return array.removeLast();
+        return arrayList.removeLast();
     }
 
     @Override
     public E peek() {
-        return array.getLast();
+        return arrayList.getLast();
     }
 
     @Override
     public int getSize() {
-        return array.getSize();
+        return arrayList.getSize();
     }
 
     @Override
     public boolean isEmpty() {
-        return array.isEmpty();
+        return arrayList.isEmpty();
     }
 
     @Override
@@ -48,9 +48,9 @@ public class ArrayStack<E> implements Stack<E> {
         StringBuilder res = new StringBuilder();
         res.append("Stack: ");
         res.append('[');
-        for (int i = 0; i < array.getSize(); i++) {
-            res.append(array.get(i));
-            if (i != array.getSize() - 1) {
+        for (int i = 0; i < arrayList.getSize(); i++) {
+            res.append(arrayList.get(i));
+            if (i != arrayList.getSize() - 1) {
                 res.append(", ");
             }
         }

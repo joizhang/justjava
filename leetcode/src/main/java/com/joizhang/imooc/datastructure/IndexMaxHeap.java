@@ -10,16 +10,16 @@ public class IndexMaxHeap<E extends Comparable<E>> implements Heap<E> {
     /**
      * 最大索引堆中的数据
      */
-    private Array<E> data;
+    private ArrayList<E> data;
 
     /**
      * 最大索引堆中的索引
      */
-    private Array<Integer> indexes;
+    private ArrayList<Integer> indexes;
 
     public IndexMaxHeap(int capacity) {
-        data = new Array<>(capacity);
-        indexes = new Array<>(capacity);
+        data = new ArrayList<>(capacity);
+        indexes = new ArrayList<>(capacity);
     }
 
 

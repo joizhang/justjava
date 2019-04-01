@@ -13,14 +13,14 @@ package com.joizhang.imooc.datastructure;
  */
 public class MaxHeap<E extends Comparable<E>> implements Heap<E> {
 
-    private Array<E> data;
+    private ArrayList<E> data;
 
     public MaxHeap() {
-        data = new Array<>();
+        data = new ArrayList<>();
     }
 
     public MaxHeap(int capacity) {
-        data = new Array<>(capacity);
+        data = new ArrayList<>(capacity);
     }
 
     /**
@@ -29,7 +29,7 @@ public class MaxHeap<E extends Comparable<E>> implements Heap<E> {
      * 2. heapify的过程，算法复杂度是O(n)
      */
     public MaxHeap(E[] arr) {
-        data = new Array<>(arr);
+        data = new ArrayList<>(arr);
         // 从最后一个非叶子节点开始进行 shiftDown，最后一个非叶子节点为 parent(arr.length - 1)
         for (int i = parent(arr.length - 1); i >= 0; i--) {
             shiftDown(i);

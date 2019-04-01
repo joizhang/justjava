@@ -8,6 +8,6 @@ public class LargestRectangleAreaTest {
 
     @Test
     public void largestRectangleArea() {
-        assertEquals(10, new LargestRectangleArea().largestRectangleArea(new int[]{2, 1, 5, 6, 2, 3}));
+        assertEquals(4, new LargestRectangleArea().largestRectangleArea(new int[]{2, 3}));
     }
 }

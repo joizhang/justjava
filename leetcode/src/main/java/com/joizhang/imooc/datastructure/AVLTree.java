@@ -53,7 +53,7 @@ public class AVLTree<K extends Comparable<K>, V> implements Map<K, V> {
      * 判断该二叉树是否是一个二分搜索树
      */
     public boolean isBST() {
-        Array<K> keys = new Array<>(size);
+        ArrayList<K> keys = new ArrayList<>(size);
         inOrder(root, keys);
         for (int i = 1; i < keys.getSize(); i++) {
             if (keys.get(i - 1).compareTo(keys.get(i)) > 0) {
@@ -66,7 +66,7 @@ public class AVLTree<K extends Comparable<K>, V> implements Map<K, V> {
     /**
      * 通过中序遍历二分搜索树获得有序列表
      */
-    private void inOrder(Node node, Array<K> keys) {
+    private void inOrder(Node node, ArrayList<K> keys) {
         if (node == null) {
             return;
         }

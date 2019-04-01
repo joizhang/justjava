@@ -25,7 +25,7 @@ public class SparseGraph implements Graph {
     /**
      * 图的具体数据
      */
-    private Array<Integer>[] g;
+    private ArrayList<Integer>[] g;
 
     @SuppressWarnings("unchecked")
     public SparseGraph(int n, boolean directed) {
@@ -35,9 +35,9 @@ public class SparseGraph implements Graph {
         this.n = n;
         this.m = 0;
         this.directed = directed;
-        g = new Array[n];
+        g = new ArrayList[n];
         for (int i = 0; i < n; i++) {
-            g[i] = new Array<>();
+            g[i] = new ArrayList<>();
         }
     }
 

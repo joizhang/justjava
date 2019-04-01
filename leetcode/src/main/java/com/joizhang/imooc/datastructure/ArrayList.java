@@ -9,7 +9,7 @@ import java.util.NoSuchElementException;
  * @param <E>
  * @author joizhang
  */
-public class Array<E> implements Iterable<E> {
+public class ArrayList<E> implements Iterable<E> {
 
 
     private E[] data;
@@ -19,7 +19,7 @@ public class Array<E> implements Iterable<E> {
      * 构造函数，传入数组的容量capacity构造Array
      */
     @SuppressWarnings("unchecked")
-    public Array(int capacity) {
+    public ArrayList(int capacity) {
         data = (E[]) new Object[capacity];
         size = 0;
     }
@@ -27,12 +27,12 @@ public class Array<E> implements Iterable<E> {
     /**
      * 无参数的构造函数，默认数组的容量capacity=10
      */
-    public Array() {
+    public ArrayList() {
         this(10);
     }
 
     @SuppressWarnings("unchecked")
-    public Array(E[] arr) {
+    public ArrayList(E[] arr) {
         data = (E[]) new Object[arr.length];
         System.arraycopy(arr, 0, data, 0, arr.length);
         size = arr.length;
@@ -199,7 +199,7 @@ public class Array<E> implements Iterable<E> {
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
-        res.append("Array: size = ").append(size).append(", capacity = ").append(data.length).append("\n");
+        res.append("ArrayList: size = ").append(size).append(", capacity = ").append(data.length).append("\n");
         res.append('[');
         for (int i = 0; i < size; i++) {
             res.append(data[i]);

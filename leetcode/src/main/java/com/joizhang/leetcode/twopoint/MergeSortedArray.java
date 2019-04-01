@@ -1,7 +1,7 @@
 package com.joizhang.leetcode.twopoint;
 
 /**
- * 88. Merge Sorted Array
+ * 88. Merge Sorted ArrayList
  *
  * @author joizhang
  */

@@ -10,18 +10,18 @@ import com.joizhang.imooc.algorithms.sort.Sorts;
  */
 public class MinHeap<E extends Comparable<E>> implements Heap<E> {
 
-    private Array<E> data;
+    private ArrayList<E> data;
 
     public MinHeap() {
-        data = new Array<>();
+        data = new ArrayList<>();
     }
 
     public MinHeap(int capacity) {
-        data = new Array<>(capacity);
+        data = new ArrayList<>(capacity);
     }
 
     public MinHeap(E[] arr) {
-        data = new Array<>(arr);
+        data = new ArrayList<>(arr);
         for (int i = parent(arr.length - 1); i >= 0; i--) {
             shiftDown(i);
         }

@@ -74,7 +74,7 @@ public class DenseGraph implements Graph {
 
     @Override
     public Iterable<Integer> adj(int v) {
-        Array<Integer> adj = new Array<>();
+        ArrayList<Integer> adj = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             if (g[v][i]) {
                 adj.addLast(i);

@@ -33,7 +33,7 @@ public interface Heap<E extends Comparable<E>> {
      * @param data 堆
      * @return 堆顶元素
      */
-    default E extractElement(Array<E> data) {
+    default E extractElement(ArrayList<E> data) {
         E ret = getElement();
         data.swap(0, data.getSize() - 1);
         data.removeLast();

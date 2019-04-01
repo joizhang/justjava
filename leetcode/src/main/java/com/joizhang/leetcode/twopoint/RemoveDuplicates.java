@@ -1,7 +1,7 @@
 package com.joizhang.leetcode.twopoint;
 
 /**
- * 26. Remove Duplicates from Sorted Array
+ * 26. Remove Duplicates from Sorted ArrayList
  *
  * @author joizhang
  */

@@ -80,7 +80,7 @@ public class DenseWeightedGraph<W extends Number & Comparable>
 
     @Override
     public Iterable<Edge> adj(int v) {
-        Array<Edge> edges = new Array<>();
+        ArrayList<Edge> edges = new ArrayList<>();
         for (int i = 0; i < g[v].length; i++) {
             if (g[v][i] != null) {
                 edges.addLast(g[v][i]);

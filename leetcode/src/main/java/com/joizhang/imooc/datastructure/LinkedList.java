@@ -6,7 +6,7 @@ package com.joizhang.imooc.datastructure;
  * @param <E>
  * @author joizhang
  */
-public class LinkedList<E> {
+public class LinkedList<E> implements List<E> {
 
     private class Node {
         E e;
@@ -36,14 +36,17 @@ public class LinkedList<E> {
         size = 0;
     }
 
+    @Override
     public int getSize() {
         return size;
     }
 
+    @Override
     public boolean isEmpty() {
         return size == 0;
     }
 
+    @Override
     public void add(int index, E e) {
         if (index < 0 || index > size) {
             throw new IllegalArgumentException("Add failed. Illegal index.");
@@ -56,14 +59,17 @@ public class LinkedList<E> {
         size++;
     }
 
+    @Override
     public void addFirst(E e) {
         add(0, e);
     }
 
+    @Override
     public void addLast(E e) {
         add(size, e);
     }
 
+    @Override
     public E get(int index) {
         if (index < 0 || index > size) {
             throw new IllegalArgumentException("Get failed. Illegal index.");
@@ -75,6 +81,12 @@ public class LinkedList<E> {
         return cur.e;
     }
 
+    @Override
+    public E getLast() {
+        return null;
+    }
+
+    @Override
     public void set(int index, E e) {
         if (index < 0 || index > size) {
             throw new IllegalArgumentException("Set failed. Illegal index.");
@@ -86,6 +98,7 @@ public class LinkedList<E> {
         cur.e = e;
     }
 
+    @Override
     public boolean contains(E e) {
         Node cur = dummyHead.next;
         while (cur != null) {
@@ -97,6 +110,12 @@ public class LinkedList<E> {
         return false;
     }
 
+    @Override
+    public int find(E e) {
+        return 0;
+    }
+
+    @Override
     public E remove(int index) {
         if (index < 0 || index > size) {
             throw new IllegalArgumentException("Remove failed. Illegal index.");
@@ -112,10 +131,21 @@ public class LinkedList<E> {
         return retNode.e;
     }
 
+    @Override
+    public E removeFirst() {
+        return null;
+    }
+
+    @Override
+    public E removeLast() {
+        return null;
+    }
+
     public E removeFirst(int index) {
         return remove(0);
     }
 
+    @Override
     public void removeElement(E e) {
         Node prev = dummyHead;
         while (prev.next != null) {
@@ -129,6 +159,11 @@ public class LinkedList<E> {
             prev.next = delNode.next;
             delNode.next = null;
         }
+    }
+
+    @Override
+    public void swap(int i, int j) {
+
     }
 
     @Override

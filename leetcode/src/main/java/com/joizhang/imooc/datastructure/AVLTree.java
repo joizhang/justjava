@@ -1,11 +1,10 @@
 package com.joizhang.imooc.datastructure;
 
 /**
- * <strong>平衡二叉树</strong>
- * <p>对于任意一个节点，左子树和右子树的高度差不能超过1</p>
+ * 平衡二叉树
+ * <p>
+ * 对于任意一个节点，左子树和右子树的高度差不能超过1
  *
- * @param <K>
- * @param <V>
  * @author joizhang
  */
 public class AVLTree<K extends Comparable<K>, V> implements Map<K, V> {

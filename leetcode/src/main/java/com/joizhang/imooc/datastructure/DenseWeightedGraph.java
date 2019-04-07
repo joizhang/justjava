@@ -1,6 +1,8 @@
 package com.joizhang.imooc.datastructure;
 
 /**
+ * 稠密图
+ *
  * @author joizhang
  */
 public class DenseWeightedGraph<W extends Number & Comparable>

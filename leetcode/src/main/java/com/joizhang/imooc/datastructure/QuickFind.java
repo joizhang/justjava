@@ -24,6 +24,20 @@ public class QuickFind implements UnionFind {
     }
 
     @Override
+    public void union(int p, int q) {
+        int pId = find(p);
+        int qId = find(q);
+        if (pId == qId) {
+            return;
+        }
+        for (int i = 0; i < id.length; i++) {
+            if (id[i] == pId) {
+                id[i] = qId;
+            }
+        }
+    }
+
+    @Override
     public int find(int p) {
         validate(p);
         return id[p];
@@ -41,20 +55,6 @@ public class QuickFind implements UnionFind {
         if (p < 0 || p >= id.length) {
             throw new IllegalArgumentException("Index " + p +
                     " is not between 0 and " + (id.length - 1));
-        }
-    }
-
-    @Override
-    public void union(int p, int q) {
-        int pId = find(p);
-        int qId = find(q);
-        if (pId == qId) {
-            return;
-        }
-        for (int i = 0; i < id.length; i++) {
-            if (id[i] == pId) {
-                id[i] = qId;
-            }
         }
     }
 

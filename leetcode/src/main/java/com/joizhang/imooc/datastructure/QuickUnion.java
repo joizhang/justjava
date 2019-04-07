@@ -18,4 +18,5 @@ public class QuickUnion implements UnionFind {
     public boolean isConnected(int p, int q) {
         return false;
     }
+
 }

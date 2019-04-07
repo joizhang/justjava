@@ -1,7 +1,7 @@
 package com.joizhang.imooc.datastructure;
 
 /**
- * <strong>二分搜索树</strong>
+ * 二分搜索树
  *
  * @param <E>
  * @author joizhang

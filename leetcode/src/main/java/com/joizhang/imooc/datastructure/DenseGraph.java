@@ -10,7 +10,7 @@ public class DenseGraph implements Graph {
     /**
      * 节点数
      */
-    private final int n;
+    private final int v;
 
     /**
      * 边数
@@ -31,7 +31,7 @@ public class DenseGraph implements Graph {
         if (n < 0) {
             throw new IllegalArgumentException("Number of vertices must be non-negative.");
         }
-        this.n = n;
+        this.v = n;
         this.m = 0;
         this.directed = directed;
         g = new boolean[n][n];
@@ -39,7 +39,7 @@ public class DenseGraph implements Graph {
 
     @Override
     public int V() {
-        return n;
+        return v;
     }
 
     @Override
@@ -49,7 +49,7 @@ public class DenseGraph implements Graph {
 
     @Override
     public void addEdge(int v, int w) {
-        boolean valid = (v >= 0 && v < n) && (w >= 0 && w < n);
+        boolean valid = (v >= 0 && v < this.v) && (w >= 0 && w < this.v);
         if (!valid) {
             throw new IllegalArgumentException("Argument v and w must bigger than zero and less than vertex number.");
         }
@@ -65,7 +65,7 @@ public class DenseGraph implements Graph {
 
     @Override
     public boolean hasEdge(int v, int w) {
-        boolean valid = (v >= 0 && v < n) && (w >= 0 && w < n);
+        boolean valid = (v >= 0 && v < this.v) && (w >= 0 && w < this.v);
         if (!valid) {
             throw new IllegalArgumentException("Argument v and w must bigger than zero and less than vertex number.");
         }
@@ -75,7 +75,7 @@ public class DenseGraph implements Graph {
     @Override
     public Iterable<Integer> adj(int v) {
         ArrayList<Integer> adj = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < this.v; i++) {
             if (g[v][i]) {
                 adj.addLast(i);
             }
@@ -86,9 +86,9 @@ public class DenseGraph implements Graph {
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder();
-        s.append(n).append(" vertices, ").append(m).append(" edges\n");
-        for (int v = 0; v < n; v++) {
-            for (int w = 0; w < n; w++) {
+        s.append(v).append(" vertices, ").append(m).append(" edges\n");
+        for (int v = 0; v < this.v; v++) {
+            for (int w = 0; w < this.v; w++) {
                 if (hasEdge(v, w)) {
                     s.append(1).append(" ");
                 } else {

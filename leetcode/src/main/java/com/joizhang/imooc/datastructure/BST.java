@@ -6,7 +6,7 @@ package com.joizhang.imooc.datastructure;
  * @param <E>
  * @author joizhang
  */
-public class BST<E extends Comparable<E>> {
+public class BST<E extends Comparable<E>> implements Tree<E> {
 
     private class Node {
         E e;
@@ -35,10 +35,17 @@ public class BST<E extends Comparable<E>> {
         return size;
     }
 
+    @Override
+    public int getSize() {
+        return size;
+    }
+
+    @Override
     public boolean isEmpty() {
         return size == 0;
     }
 
+    @Override
     public void add(E e) {
         root = add(root, e);
     }
@@ -62,8 +69,15 @@ public class BST<E extends Comparable<E>> {
         return node;
     }
 
+    @Override
     public boolean contains(E e) {
         return contains(root, e);
+    }
+
+    @Override
+    public E get(E e) {
+        // TODO
+        return null;
     }
 
     private boolean contains(Node node, E e) {
@@ -257,6 +271,7 @@ public class BST<E extends Comparable<E>> {
         return leftNode;
     }
 
+    @Override
     public void remove(E e) {
         root = remove(root, e);
     }

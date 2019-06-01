@@ -30,6 +30,7 @@ public interface Graph {
      *
      * @param v 顶点
      * @param w 顶点
+     * @return 是否有 v 和 w 组成的边
      */
     boolean hasEdge(int v, int w);
 

@@ -7,12 +7,10 @@ package com.joizhang.imooc.datastructure;
  *
  * @author joizhang
  */
-public class AVLTree<K extends Comparable<K>, V> implements Map<K, V> {
+public class AVLTree<E extends Comparable<E>> implements Tree<E>  {
 
     private class Node {
-        K key;
-
-        V value;
+        E e;
 
         Node left;
 
@@ -20,9 +18,8 @@ public class AVLTree<K extends Comparable<K>, V> implements Map<K, V> {
 
         int height;
 
-        Node(K key, V value) {
-            this.key = key;
-            this.value = value;
+        Node(E e) {
+            this.e = e;
             this.left = null;
             this.right = null;
             this.height = 1;
@@ -52,10 +49,10 @@ public class AVLTree<K extends Comparable<K>, V> implements Map<K, V> {
      * 判断该二叉树是否是一个二分搜索树
      */
     public boolean isBST() {
-        ArrayList<K> keys = new ArrayList<>(size);
-        inOrder(root, keys);
-        for (int i = 1; i < keys.getSize(); i++) {
-            if (keys.get(i - 1).compareTo(keys.get(i)) > 0) {
+        ArrayList<E> list = new ArrayList<>(size);
+        inOrder(root, list);
+        for (int i = 1; i < list.getSize(); i++) {
+            if (list.get(i - 1).compareTo(list.get(i)) > 0) {
                 return false;
             }
         }
@@ -65,13 +62,13 @@ public class AVLTree<K extends Comparable<K>, V> implements Map<K, V> {
     /**
      * 通过中序遍历二分搜索树获得有序列表
      */
-    private void inOrder(Node node, ArrayList<K> keys) {
+    private void inOrder(Node node, ArrayList<E> list) {
         if (node == null) {
             return;
         }
-        inOrder(node.left, keys);
-        keys.addLast(node.key);
-        inOrder(node.right, keys);
+        inOrder(node.left, list);
+        list.addLast(node.e);
+        inOrder(node.right, list);
     }
 
     /**
@@ -110,8 +107,8 @@ public class AVLTree<K extends Comparable<K>, V> implements Map<K, V> {
     }
 
     @Override
-    public void add(K key, V value) {
-        root = add(root, key, value);
+    public void add(E e) {
+        root = add(root, e);
     }
 
     /**
@@ -119,17 +116,17 @@ public class AVLTree<K extends Comparable<K>, V> implements Map<K, V> {
      *
      * @return 返回插入新节点后二分搜索树的根
      */
-    private Node add(Node node, K key, V value) {
+    private Node add(Node node, E e) {
         if (node == null) {
             size++;
-            return new Node(key, value);
+            return new Node(e);
         }
-        if (key.compareTo(node.key) < 0) {
-            node.left = add(node.left, key, value);
-        } else if (key.compareTo(node.key) > 0) {
-            node.right = add(node.right, key, value);
+        if (e.compareTo(node.e) < 0) {
+            node.left = add(node.left, e);
+        } else if (e.compareTo(node.e) > 0) {
+            node.right = add(node.right, e);
         } else {
-            node.value = value;
+            node.e = e;
         }
         // 更新 height
         node.height = 1 + Math.max(getHeight(node.left), getHeight(node.right));
@@ -208,36 +205,31 @@ public class AVLTree<K extends Comparable<K>, V> implements Map<K, V> {
     }
 
     @Override
-    public V remove(K key) {
-        return null;
+    public void remove(E e) {
+
     }
 
     @Override
-    public boolean contains(K key) {
-        return getNode(root, key) != null;
+    public boolean contains(E e) {
+        return getNode(root, e) != null;
     }
 
     @Override
-    public V get(K key) {
-        Node node = getNode(root, key);
-        return node == null ? null : node.value;
+    public E get(E e) {
+        Node node = getNode(root, e);
+        return node == null ? null : node.e;
     }
 
-    @Override
-    public void set(K key, V value) {
-
-    }
-
-    private Node getNode(Node node, K key) {
+    private Node getNode(Node node, E e) {
         if (node == null) {
             return null;
         }
-        if (key.compareTo(node.key) == 0) {
+        if (e.compareTo(node.e) == 0) {
             return node;
-        } else if (key.compareTo(node.key) < 0) {
-            return getNode(node.left, key);
+        } else if (e.compareTo(node.e) < 0) {
+            return getNode(node.left, e);
         } else {
-            return getNode(node.right, key);
+            return getNode(node.right, e);
         }
     }
 

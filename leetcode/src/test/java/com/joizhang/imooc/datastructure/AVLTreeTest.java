@@ -11,14 +11,38 @@ import static org.junit.Assert.*;
 
 public class AVLTreeTest {
 
-    private AVLTree<Integer, Integer> avlTree;
+    class WordCount implements Comparable<WordCount> {
+        private String word;
+
+        private int count;
+
+        public WordCount(String word, int count) {
+            this.word = word;
+            this.count = count;
+        }
+
+        @Override
+        public int compareTo(WordCount other) {
+            return this.word.compareTo(other.word);
+        }
+
+        public int getCount() {
+            return count;
+        }
+
+        public void setCount(int count) {
+            this.count = count;
+        }
+    }
+
+    private AVLTree<Integer> avlTree;
 
     @Before
     public void setUp() {
         avlTree = new AVLTree<>();
         int[] nums = {5, 3, 6, 8, 4, 2};
         for (int num : nums) {
-            avlTree.add(num, num);
+            avlTree.add(num);
         }
     }
 
@@ -33,13 +57,14 @@ public class AVLTreeTest {
         FileOperation.readFile("Pride-And-prejudice.txt", words);
         System.out.println(words.size());
 
-        AVLTree<String, Integer> avlTree = new AVLTree<>();
+        AVLTree<WordCount> avlTree = new AVLTree<>();
         for (String word : words) {
-            if (avlTree.contains(word)) {
-                avlTree.add(word, avlTree.get(word) + 1);
-            } else {
-                avlTree.add(word, 1);
+            WordCount wordCount = new WordCount(word, 1);
+            if (avlTree.contains(wordCount)) {
+                wordCount = avlTree.get(wordCount);
+                wordCount.setCount(wordCount.getCount() + 1);
             }
+            avlTree.add(wordCount);
         }
 
         assertTrue(avlTree.isBST());

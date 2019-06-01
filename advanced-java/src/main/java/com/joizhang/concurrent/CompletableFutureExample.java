@@ -10,7 +10,7 @@ public class CompletableFutureExample {
     private static final ExecutorService EXECUTOR_SERVICE = new ThreadPoolExecutor(5, 5, 3000L,
             TimeUnit.MILLISECONDS,
             new ArrayBlockingQueue<>(200),
-            r -> new Thread(r, "my-tread"),
+            r -> new Thread(r, "my-thread"),
             new ThreadPoolExecutor.AbortPolicy());
 
     public Future<String> calculateAsync() {

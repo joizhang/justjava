@@ -16,7 +16,7 @@ public class ArrayList<E> implements List<E>, Iterable<E> {
     private int size;
 
     /**
-     * 构造函数，传入数组的容量capacity构造Array
+     * 构造函数，传入数组的容量 capacity 构造 Array
      */
     @SuppressWarnings("unchecked")
     public ArrayList(int capacity) {
@@ -25,7 +25,7 @@ public class ArrayList<E> implements List<E>, Iterable<E> {
     }
 
     /**
-     * 无参数的构造函数，默认数组的容量capacity=10
+     * 无参数的构造函数，默认数组的容量 capacity=10
      */
     public ArrayList() {
         this(10);

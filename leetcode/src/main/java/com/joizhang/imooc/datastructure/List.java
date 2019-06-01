@@ -1,7 +1,7 @@
 package com.joizhang.imooc.datastructure;
 
 /**
- * 表
+ * 线性表接口
  *
  * @author joizhang
  */
@@ -105,7 +105,8 @@ public interface List<E> {
 
     /**
      * 从数组中删除元素e
-     * @param e
+     *
+     * @param e 指定删除的元素
      */
     void removeElement(E e);
 
@@ -116,7 +117,5 @@ public interface List<E> {
      * @param j 位置
      */
     void swap(int i, int j);
-
-
 
 }

@@ -7,7 +7,6 @@
     <version>1.0</version>
     <modules>
         <module>imooc-learning</module>
-        <module>seckill-imooc</module>
         <module>spring-java-config</module>
         <module>advanced-java</module>
         <module>guice-imooc</module>

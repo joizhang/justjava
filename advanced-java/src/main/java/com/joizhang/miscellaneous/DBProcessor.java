@@ -46,7 +46,7 @@ public class DBProcessor {
      *
      * @return 返回 ResultSet 结果集
      */
-    public List<Map<String, Object>> excuteQuery(String sql) {
+    public List<Map<String, Object>> executeQuery(String sql) {
         if (sql == null || "".equals(sql)) {
             return null;
         }
@@ -70,7 +70,7 @@ public class DBProcessor {
      *
      * @return 返回 ResultSet 结果集
      */
-    public List<Map<String, Object>> excuteQuery(String sql, Object[] params) {
+    public List<Map<String, Object>> executeQuery(String sql, Object[] params) {
         if (sql == null || "".equals(sql)) {
             return null;
         }
@@ -99,7 +99,7 @@ public class DBProcessor {
      * @param sql
      * @return 返回影响的行数
      */
-    public int excuteUpdate(String sql) {
+    public int executeUpdate(String sql) {
         if (sql == null || "".equals(sql)) {
             return 0;
         }
@@ -122,7 +122,7 @@ public class DBProcessor {
      *
      * @return 返回影响的行数
      */
-    public int excuteUpdate(String sql, Object[] params) {
+    public int executeUpdate(String sql, Object[] params) {
         if (sql == null || "".equals(sql)) {
             return 0;
         }
@@ -202,7 +202,9 @@ public class DBProcessor {
         StringBuilder sql = new StringBuilder();
         sql.append("select count(").append(field).append(") as count ");
         sql.append("from ").append(table).append(" ");
-        if (where != null) sql.append("where ").append(where);
+        if (where != null) {
+            sql.append("where ").append(where);
+        }
         try {
             this.getConnection();
             stmt = conn.createStatement();

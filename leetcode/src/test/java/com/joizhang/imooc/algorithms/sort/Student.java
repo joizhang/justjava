@@ -3,7 +3,7 @@ package com.joizhang.imooc.algorithms.sort;
 /**
  * @author joizhang
  */
-public class Student implements Comparable {
+public class Student implements Comparable<Student> {
 
     private String name;
 
@@ -22,11 +22,6 @@ public class Student implements Comparable {
                 '}';
     }
 
-    @Override
-    public int compareTo(Object o) {
-        return Integer.compare(score, ((Student) o).score);
-    }
-
     public String getName() {
         return name;
     }
@@ -41,5 +36,10 @@ public class Student implements Comparable {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return Integer.compare(score, ((Student) o).score);
     }
 }

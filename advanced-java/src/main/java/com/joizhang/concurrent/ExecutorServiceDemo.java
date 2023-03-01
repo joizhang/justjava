@@ -4,7 +4,7 @@ import java.util.concurrent.*;
 
 public class ExecutorServiceDemo {
 
-    private static  final ExecutorService SERVICE = new ThreadPoolExecutor(
+    private static final ExecutorService SERVICE = new ThreadPoolExecutor(
             4,
             10,
             0, TimeUnit.SECONDS,
@@ -13,9 +13,12 @@ public class ExecutorServiceDemo {
             new ThreadPoolExecutor.AbortPolicy());
 
     public static void main(String[] args) {
-        SERVICE.submit(()->{
-            System.out.println("Hello");
-        });
+        for (int i = 0; i < 100; i++) {
+            int finalI = i;
+            SERVICE.execute(() -> {
+                System.out.println("Hello" + finalI);
+            });
+        }
         SERVICE.shutdown();
     }
 

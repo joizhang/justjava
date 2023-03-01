@@ -5,6 +5,23 @@ package com.joizhang.stackoverflow;
  */
 public class PassByValue {
 
+    static class Dog {
+
+        private String name;
+
+        Dog(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+    }
+
     private static void foo(Dog aDog) {
         System.out.println("Max".equals(aDog.getName()));
         aDog = new Dog("Fifi");
@@ -33,19 +50,3 @@ public class PassByValue {
 
 }
 
-class Dog {
-
-    private String name;
-
-    Dog(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-}

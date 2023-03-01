@@ -5,42 +5,42 @@ import java.util.Queue;
 import java.util.Random;
 import java.util.concurrent.*;
 
-class MyBlockingQueue<T> {
-    private final int capacity;
-
-    private final Queue<T> queue = new LinkedList<>();
-
-    public MyBlockingQueue() {
-        this(Integer.MAX_VALUE);
-    }
-
-    public MyBlockingQueue(int capacity) {
-        this.capacity = capacity;
-    }
-
-    public int size() {
-        return queue.size();
-    }
-
-    public synchronized void add(T element) throws InterruptedException {
-        while (queue.size() == capacity) {
-            wait();
-        }
-        queue.add(element);
-        notify();
-    }
-
-    public synchronized T remove() throws InterruptedException {
-        while (queue.size() == 0) {
-            wait();
-        }
-        T element = queue.remove();
-        notify();
-        return element;
-    }
-}
-
 public class BlockingQueueDemo<T> {
+
+    static class MyBlockingQueue<T> {
+        private final int capacity;
+
+        private final Queue<T> queue = new LinkedList<>();
+
+        public MyBlockingQueue() {
+            this(Integer.MAX_VALUE);
+        }
+
+        public MyBlockingQueue(int capacity) {
+            this.capacity = capacity;
+        }
+
+        public int size() {
+            return queue.size();
+        }
+
+        public synchronized void add(T element) throws InterruptedException {
+            while (queue.size() == capacity) {
+                wait();
+            }
+            queue.add(element);
+            notify();
+        }
+
+        public synchronized T remove() throws InterruptedException {
+            while (queue.size() == 0) {
+                wait();
+            }
+            T element = queue.remove();
+            notify();
+            return element;
+        }
+    }
 
     public static void main(String[] args) {
         MyBlockingQueue<Object> queue = new MyBlockingQueue<>(5);

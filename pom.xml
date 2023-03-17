@@ -10,7 +10,6 @@
         <module>spring-java-config</module>
         <module>advanced-java</module>
         <module>guice-imooc</module>
-        <module>leetcode</module>
     </modules>
     <packaging>pom</packaging>
 

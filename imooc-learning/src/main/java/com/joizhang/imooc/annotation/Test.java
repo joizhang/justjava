@@ -5,9 +5,6 @@ import java.lang.reflect.Method;
 
 public class Test {
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
         Filter f1 = new Filter();
         //查询id为10的用户

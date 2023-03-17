@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * 序列话工具
+ * 序列化工具
  */
 public class ProtoStuffSerializerUtil {
 

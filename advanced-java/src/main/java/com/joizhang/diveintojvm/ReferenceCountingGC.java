@@ -32,7 +32,6 @@ public class ReferenceCountingGC {
 
         // 执行GC
         System.gc();
-
     }
 
 }

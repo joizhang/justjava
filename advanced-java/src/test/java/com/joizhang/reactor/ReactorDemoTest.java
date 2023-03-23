@@ -61,8 +61,6 @@ public class ReactorDemoTest {
             i.next("B");
             i.complete();
         }).subscribe(System.out::println);
-
-
     }
 
 }
